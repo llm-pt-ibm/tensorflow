@@ -40,7 +40,12 @@ limitations under the License.
 #include "tensorflow/dtensor/cc/constants.h"
 #include "tensorflow/dtensor/mlir/ir/tf_dtensor.h"
 
+#include "llvm/Support/Casting.h"
 namespace tensorflow {
+using llvm::cast;
+using llvm::isa;
+using llvm::dyn_cast;
+
 namespace dtensor {
 
 // OpHash prints the `op` into a string and performs hash value on the output

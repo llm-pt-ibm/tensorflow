@@ -29,7 +29,12 @@ limitations under the License.
 #include "tensorflow/dtensor/mlir/sparse_expander.h"
 #include "tensorflow/dtensor/mlir/topological_iterator.h"
 
+#include "llvm/Support/Casting.h"
 namespace tensorflow {
+using llvm::cast;
+using llvm::isa;
+using llvm::dyn_cast;
+
 namespace dtensor {
 
 namespace {

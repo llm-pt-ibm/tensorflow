@@ -413,7 +413,7 @@ void EigenGenericConv2D(
           Eigen::Index start = task_index * task_size;
           Eigen::Index end = std::min(start + task_size, feature_group_count);
           for (Eigen::Index i = start; i < end; ++i) {
-            auto on_done = [count_down]() mutable { count_down.CountDown(); };
+            auto on_done = [count_down]() mutable { auto cd = count_down; cd.CountDown(); };
             auto [output, convolved] = convolve_group(i);
             output.device(*device, std::move(on_done)) = convolved;
           }
@@ -573,7 +573,7 @@ void EigenConv3D(const Eigen::ThreadPoolDevice* device, ScalarType* out,
     auto output_reshaped = output.reshape(output_reshaped_dims).chip(i, 4);
 
     if (device != nullptr) {
-      auto on_done = [count_down]() mutable { count_down.CountDown(); };
+      auto on_done = [count_down]() mutable { auto cd = count_down; cd.CountDown(); };
       output_reshaped.device(*device, std::move(on_done)) = convolved;
     } else {
       output_reshaped = convolved;

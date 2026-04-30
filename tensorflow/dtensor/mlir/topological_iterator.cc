@@ -26,7 +26,12 @@ limitations under the License.
 #include "tensorflow/compiler/mlir/tensorflow/ir/tf_ops.h"
 #include "tensorflow/dtensor/mlir/op_utils.h"
 
+#include "llvm/Support/Casting.h"
 namespace tensorflow {
+using llvm::cast;
+using llvm::isa;
+using llvm::dyn_cast;
+
 namespace dtensor {
 
 TopologicalIterator::TopologicalIterator(mlir::func::FuncOp main_func)

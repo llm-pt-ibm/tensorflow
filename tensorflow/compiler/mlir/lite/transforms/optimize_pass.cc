@@ -2388,7 +2388,7 @@ struct FuseReshapeAndTransposeAroundBatchMatmul
         static_cast<int>(transpose_input.getType().getDimSize(1)),
         static_cast<int>(std::accumulate(
             transpose_input.getType().getShape().begin() + 2,
-            transpose_input.getType().getShape().end(), 1, std::multiplies()))};
+            transpose_input.getType().getShape().end(), 1, std::multiplies<int64_t>()))};
     auto shape_constant =
         ConstOp::create(rewriter, batch_matmul.getLoc(),
                         GetI32ElementsAttr(new_shape, &rewriter));

@@ -285,7 +285,7 @@ xla::ffi::AttributeProto Attribute::ToProto() const {
         } else if constexpr (std::is_same_v<U, AttributesDictionary>) {
           *proto.mutable_dict() = value.ToProto();
         } else {
-          static_assert(false, "Unsupported attribute type");
+          static_assert(sizeof(U) == 0, "Unsupported attribute type");
         }
       },
       AsVariant());
@@ -320,7 +320,7 @@ ScalarProto Scalar::ToProto() const {
         } else if constexpr (std::is_same_v<U, double>) {
           proto.set_f64(value);
         } else {
-          static_assert(false, "Unsupported scalar type");
+          static_assert(sizeof(U) == 0, "Unsupported scalar type");
         }
       },
       AsVariant());
@@ -408,7 +408,7 @@ ArrayProto Array::ToProto() const {
           proto.mutable_f64()->mutable_values()->Assign(value.begin(),
                                                         value.end());
         } else {
-          static_assert(false, "Unsupported array type");
+          static_assert(sizeof(U) == 0, "Unsupported array type");
         }
       },
       AsVariant());
@@ -480,7 +480,7 @@ FlatAttributeProto FlatAttribute::ToProto() const {
         } else if constexpr (std::is_same_v<U, std::string>) {
           proto.set_str(value);
         } else {
-          static_assert(false, "Unsupported flat attribute type");
+          static_assert(sizeof(U) == 0, "Unsupported flat attribute type");
         }
       },
       AsVariant());

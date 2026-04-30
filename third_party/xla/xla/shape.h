@@ -73,9 +73,9 @@ class Shape {
   ~Shape();
 
   Shape(const Shape&);
-  Shape(Shape&&) noexcept;
+  Shape(Shape&&);
   Shape& operator=(const Shape&);
-  Shape& operator=(Shape&&) noexcept;
+  Shape& operator=(Shape&&);
 
   // Creates a token, opaque or buffer shape.
   // Precondition:

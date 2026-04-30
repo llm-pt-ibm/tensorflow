@@ -26,7 +26,12 @@ limitations under the License.
 #include "mlir/Support/LLVM.h"  // from @llvm-project
 #include "tensorflow/compiler/mlir/utils/name_utils.h"
 
+#include "llvm/Support/Casting.h"
 namespace tensorflow {
+using llvm::cast;
+using llvm::isa;
+using llvm::dyn_cast;
+
 namespace dtensor {
 
 namespace {

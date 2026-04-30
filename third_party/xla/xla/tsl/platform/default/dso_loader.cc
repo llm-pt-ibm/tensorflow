@@ -22,17 +22,24 @@ limitations under the License.
 #include "absl/status/statusor.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cuda/cuda_config.h"
-#include "third_party/nccl/nccl_config.h"
+#define TF_CUDA_VERSION "0"
+#define TF_CUDNN_VERSION "0"
+#define TF_CUDART_VERSION "0"
+#define TF_CUPTI_VERSION "0"
+#define TF_CUBLAS_VERSION "0"
+#define TF_CUSOLVER_VERSION "0"
+#define TF_CUFFT_VERSION "0"
+#define TF_CUSPARSE_VERSION "0"
+#define TF_NCCL_VERSION "0"
 #include "third_party/nvshmem/nvshmem_config.h"
 #include "xla/tsl/platform/logging.h"
 #include "tsl/platform/load_library.h"
 #include "tsl/platform/path.h"
 #include "tsl/platform/platform.h"
-#include "third_party/tensorrt/tensorrt_config.h"
+#define TF_TENSORRT_VERSION "0"
 
 #if TENSORFLOW_USE_ROCM
-#include "rocm/rocm_config.h"
+#define TF_ROCM_VERSION "0"
 #endif
 
 namespace tsl {

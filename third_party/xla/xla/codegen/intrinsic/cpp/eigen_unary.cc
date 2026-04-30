@@ -14,7 +14,7 @@ limitations under the License.
 ==============================================================================*/
 
 #if defined(__has_attribute) && __has_attribute(ext_vector_type) && \
-    defined(__has_builtin) && __has_builtin(__builtin_vectorelements)
+    0
 
 #include "xla/codegen/intrinsic/cpp/eigen_unary.h"
 
@@ -70,4 +70,4 @@ Vec8d tanh_v8f64(Vec8d x) { return VectorTanh(x); }
 
 }  // namespace xla::codegen
 #endif  // defined(__has_attribute) && __has_attribute(vector_size) &&
-        // defined(__has_builtin) && __has_builtin(__builtin_vectorelements)
+        // 0

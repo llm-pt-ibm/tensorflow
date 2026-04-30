@@ -84,6 +84,21 @@ CreateThunkOperationsAsPtrs(const ThunkSequence& thunk_sequence);
 // graph from a thunk sequence.
 class ThunkOperation : public ExecutionGraph::Operation {
  public:
+  ThunkOperation(ThunkOperation&& other) noexcept
+      : ExecutionGraph::Operation(std::move(other)),
+        name_(std::move(other.name_)),
+        op_type_id_(other.op_type_id_),
+        buffer_uses_(std::move(other.buffer_uses_)),
+        resource_uses_(std::move(other.resource_uses_)) {}
+  ThunkOperation& operator=(ThunkOperation&& other) noexcept {
+    ExecutionGraph::Operation::operator=(std::move(other));
+    name_ = std::move(other.name_);
+    op_type_id_ = other.op_type_id_;
+    buffer_uses_ = std::move(other.buffer_uses_);
+    resource_uses_ = std::move(other.resource_uses_);
+    return *this;
+  }
+ public:
   explicit ThunkOperation(Thunk* thunk)
       : name_(absl::StrFormat("op: %s (kind: %v)", thunk->info().op_name,
                               thunk->kind())),

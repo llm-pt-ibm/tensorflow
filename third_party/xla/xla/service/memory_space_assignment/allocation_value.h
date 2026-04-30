@@ -100,9 +100,26 @@ namespace memory_space_assignment {
 //   add.5, operand 0
 class AllocationValue {
  public:
-  // PPC64LE: GCC 8 requires noexcept move ctors for vector reallocation
-  AllocationValue(AllocationValue&&) noexcept = default;
-  AllocationValue& operator=(AllocationValue&&) noexcept = default;
+  // PPC64LE: GCC 8 deletes `noexcept = default` when members have noexcept(false) move.
+  // Explicit noexcept move is required for vector reallocation to use move instead of copy.
+  AllocationValue(AllocationValue&& other) noexcept
+      : value_(other.value_),
+        defining_position_(std::move(other.defining_position_)),
+        size_(other.size_),
+        requires_contiguous_allocation_(other.requires_contiguous_allocation_),
+        uses_(std::move(other.uses_)),
+        allocation_sequence_(std::move(other.allocation_sequence_)),
+        split_shape_(std::move(other.split_shape_)) {}
+  AllocationValue& operator=(AllocationValue&& other) noexcept {
+    value_ = other.value_;
+    defining_position_ = std::move(other.defining_position_);
+    size_ = other.size_;
+    requires_contiguous_allocation_ = other.requires_contiguous_allocation_;
+    uses_ = std::move(other.uses_);
+    allocation_sequence_ = std::move(other.allocation_sequence_);
+    split_shape_ = std::move(other.split_shape_);
+    return *this;
+  }
   // This data structure wraps an HloUse and adds additional metadata that are
   // useful for allocation.
   struct Use {

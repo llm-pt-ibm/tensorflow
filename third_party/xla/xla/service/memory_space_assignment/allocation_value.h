@@ -100,6 +100,9 @@ namespace memory_space_assignment {
 //   add.5, operand 0
 class AllocationValue {
  public:
+  // PPC64LE: GCC 8 requires noexcept move ctors for vector reallocation
+  AllocationValue(AllocationValue&&) noexcept = default;
+  AllocationValue& operator=(AllocationValue&&) noexcept = default;
   // This data structure wraps an HloUse and adds additional metadata that are
   // useful for allocation.
   struct Use {

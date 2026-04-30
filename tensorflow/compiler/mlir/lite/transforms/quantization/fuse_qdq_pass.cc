@@ -108,8 +108,8 @@ OpQuantizationType GetOpQuantizationType(mlir::Operation* op) {
   // The assumption here is that the op has at least one DQ operand since the
   // pattern's root is that.
 
-  static const absl::NoDestructor<absl::flat_hash_set<std::string>>
-      kDrqOpsWithNoDrqInput({"tfl.embedding_lookup"});
+  static const auto* kDrqOpsWithNoDrqInput =
+      new absl::flat_hash_set<std::string>({"tfl.embedding_lookup"});
 
   // "return" is not going to be quantized
   if (op->hasTrait<OpTrait::IsTerminator>()) {

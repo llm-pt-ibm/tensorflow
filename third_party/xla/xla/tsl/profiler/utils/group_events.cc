@@ -171,8 +171,8 @@ bool IsTPUParentLineEvent(const XEventVisitor& event) {
 }
 
 bool IsImplicitRootEvent(const XEventVisitor& event) {
-  static const absl::NoDestructor<absl::flat_hash_set<int64_t>>
-      kImplicitRootEvents(absl::flat_hash_set<int64_t>{
+  static const auto* kImplicitRootEvents =
+      new absl::flat_hash_set<int64_t>(absl::flat_hash_set<int64_t>{
           HostEventType::kFunctionRun,
           HostEventType::kSessionRun,
           HostEventType::kRunGraph,

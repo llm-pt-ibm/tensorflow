@@ -74,7 +74,8 @@ absl::StatusOr<xla::WorkflowType> GetWorkflowTypeFromStr(
 
   static const absl::NoDestructor<
       absl::flat_hash_map<std::string, xla::WorkflowType>>
-      kWorkflowAliasMap({
+      kWorkflowAliasMap(
+      absl::flat_hash_map<std::string, xla::WorkflowType>{
           {"NIGHTLY", xla::WorkflowType::SCHEDULED},
           {"PRESUBMIT", xla::WorkflowType::PRESUBMIT},
           {"POSTSUBMIT", xla::WorkflowType::POSTSUBMIT},

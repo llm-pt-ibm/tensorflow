@@ -22,8 +22,8 @@ limitations under the License.
 
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_activity.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cupti_activity.h"
+#include "cuda.h"
 #include "xla/backends/profiler/gpu/cupti_interface.h"
 #include "xla/backends/profiler/gpu/cupti_marker_data_parser.h"
 #include "xla/backends/profiler/gpu/cupti_utils.h"

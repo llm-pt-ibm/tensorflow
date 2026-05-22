@@ -35,7 +35,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_e9143db4 {
 template <typename Scalar>
 __device__ void ComputePermutationFromTranspositions(
     int64_t num_rows, const int* __restrict__ pivots,
@@ -57,8 +57,7 @@ __device__ void ComputePermutationFromTranspositions(
     permutation_indices[pivots[i] - 1] = t;
   }
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_e9143db4
 // Kernel to compute the inverse of a permutation from a sequence of
 // transpositions.
 template <typename Scalar>

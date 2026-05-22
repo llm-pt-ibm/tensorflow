@@ -1,3 +1,5 @@
+// ppc64le GCC patch: this .cc includes .cu.h with __global__ - requires NVCC
+#ifdef __CUDACC__
 /* Copyright 2025 The OpenXLA Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,3 +38,5 @@ REGISTER_RAGGED_ALL_TO_ALL_KERNEL(1);
 REGISTER_RAGGED_ALL_TO_ALL_KERNEL(2);
 REGISTER_RAGGED_ALL_TO_ALL_KERNEL(4);
 REGISTER_RAGGED_ALL_TO_ALL_KERNEL(8);
+
+#endif  // __CUDACC__

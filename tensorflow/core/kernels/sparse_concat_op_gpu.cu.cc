@@ -34,7 +34,7 @@ typedef Eigen::GpuDevice GPUDevice;
 
 namespace functor {
 
-namespace {
+inline namespace ppc64le_anon_15c5c3fb {
 
 template <typename T>
 __global__ void SparseConcatKernel(
@@ -111,8 +111,7 @@ __global__ void SparseConcatPermuteKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_15c5c3fb
 template <typename T>
 struct SparseConcatFunctor<GPUDevice, T> {
   void operator()(OpKernelContext* context, const OpInputList& inds,

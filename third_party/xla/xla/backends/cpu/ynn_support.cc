@@ -44,7 +44,7 @@ namespace xla::cpu {
 
 const absl::flat_hash_map<HloOpcode, ynn_unary_operator>& GetYnnUnaryOpMap() {
   static absl::NoDestructor<absl::flat_hash_map<HloOpcode, ynn_unary_operator>>
-      unary_op_map({
+      unary_op_map(absl::flat_hash_map<HloOpcode, ynn_unary_operator>{
           {HloOpcode::kAbs, ynn_unary_abs},
           {HloOpcode::kCeil, ynn_unary_ceil},
           {HloOpcode::kConvert, ynn_unary_convert},
@@ -80,7 +80,7 @@ absl::StatusOr<ynn_unary_operator> YnnUnaryOperator(const HloOpcode& opcode) {
 
 const absl::flat_hash_map<HloOpcode, ynn_binary_operator>& GetYnnBinaryOpMap() {
   static absl::NoDestructor<absl::flat_hash_map<HloOpcode, ynn_binary_operator>>
-      binary_op_map({
+      binary_op_map(absl::flat_hash_map<HloOpcode, ynn_binary_operator>{
           {HloOpcode::kAdd, ynn_binary_add},
           {HloOpcode::kDivide, ynn_binary_divide},
           {HloOpcode::kMaximum, ynn_binary_max},
@@ -170,7 +170,7 @@ absl::StatusOr<bool> IsDotSupportedByYnn(
   // Stores tuple of allowed (input, output) dtypes.
   static const absl::NoDestructor<absl::flat_hash_set<
       std::tuple<PrimitiveType, PrimitiveType, PrimitiveType>>>
-      kAllowedTypes({
+      kAllowedTypes(absl::flat_hash_set<std::tuple<xla::PrimitiveType, xla::PrimitiveType, xla::PrimitiveType>>{
           {F32, F32, F32},
           // TODO(b/449998002): We don't have fast fp16 kernels yet.
           // {F16, F16, F32},
@@ -319,7 +319,7 @@ bool IsConvolutionOpSupportedByYnn(const HloInstruction* instr) {
   // TODO(b/466474339): Enable other data types.
   static const absl::NoDestructor<absl::flat_hash_set<
       std::tuple<PrimitiveType, PrimitiveType, PrimitiveType>>>
-      kAllowedTypes({/*{F32, F32, F32}, {BF16, BF16, F32},*/ {S8, S8, S32}});
+      kAllowedTypes(absl::flat_hash_set<std::tuple<xla::PrimitiveType, xla::PrimitiveType, xla::PrimitiveType>>{/*{F32, F32, F32}, {BF16, BF16, F32},*/ {S8, S8, S32}});
 
   const Shape& lhs_shape = conv->operand(0)->shape();
   const Shape& rhs_shape = conv->operand(1)->shape();

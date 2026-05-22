@@ -23,7 +23,7 @@ limitations under the License.
 #include <tuple>
 
 #include "absl/base/casts.h"
-#include "third_party/gpus/cuda/include/cuda/atomic"
+#include "cuda/atomic"
 #include "xla/backends/gpu/runtime/buffer_debug_log_structs.h"
 #include "xla/stream_executor/cuda/cuda_platform_id.h"
 #include "xla/stream_executor/gpu/buffer_debug_float_check_kernel.h"
@@ -33,7 +33,7 @@ limitations under the License.
 
 namespace se = stream_executor;
 
-namespace {
+inline namespace ppc64le_anon_2c9d5306 {
 
 using xla::gpu::FloatCheckResult;
 
@@ -268,8 +268,7 @@ se::KernelLoaderSpec GetReduceFloatCheckResultsKernelSpec(int arity) {
       "BufferDebugReduceFloatCheckResultsKernel", arity);
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_2c9d5306
 GPU_KERNEL_REGISTRY_REGISTER_KERNEL_STATICALLY(
     BufferDebugFloatCheckF32Kernel, se::gpu::BufferDebugFloatCheckF32Kernel,
     se::cuda::kCudaPlatformId, GetFloatCheckF32KernelSpec);

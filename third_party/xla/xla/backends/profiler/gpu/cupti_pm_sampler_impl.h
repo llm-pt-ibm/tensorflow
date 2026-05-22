@@ -35,8 +35,8 @@ limitations under the License.
 // This class requires the CUPTI PM sampling APIs to be defined and available.
 // This means this cannot build with CUDA < 12.6.  Build is controled through
 // bazel.
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_pmsampling.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_host.h"
+#include "cupti_pmsampling.h"
+#include "cupti_profiler_host.h"
 #include "xla/backends/profiler/gpu/cupti_pm_sampler.h"
 
 namespace xla {

@@ -18,8 +18,8 @@ limitations under the License.
 
 #include <cstddef>
 
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
 
 namespace stream_executor::cuda {
 

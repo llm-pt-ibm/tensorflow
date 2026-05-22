@@ -18,14 +18,14 @@ limitations under the License.
 #include <cstddef>
 #include <vector>
 
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
 
 namespace xla {
 namespace profiler {
 namespace test {
 
-namespace {
+inline namespace ppc64le_anon_260d7af0 {
 
 __global__ void VecAdd(const double* a, const double* b, double* c, int n) {
   int i = blockDim.x * blockIdx.x + threadIdx.x;
@@ -37,8 +37,7 @@ __global__ void VecSub(const double* a, const double* b, double* c, int n) {
   if (i < n) c[i] = a[i] - b[i];
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_260d7af0
 std::vector<double> SimpleAddSubWithProfiler(int num_elements) {
   std::vector<double> vec_a;
   std::vector<double> vec_b;

@@ -30,7 +30,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_fa5531be {
 
 // Helper that wraps a multi-dimensional index and provides a comparison
 // operator that shifts and then compares against another index. This is
@@ -114,8 +114,7 @@ __global__ void SparseSliceGradKernel(int64_t input_nnz, int64_t output_nnz,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_fa5531be
 namespace functor {
 
 template <typename T>

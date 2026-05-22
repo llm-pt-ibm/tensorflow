@@ -51,8 +51,8 @@ class MlirKernelSource final : public KernelSource {
   explicit MlirKernelSource(mlir::OwningOpRef<mlir::ModuleOp> module)
       : MlirKernelSource(nullptr, std::move(module)) {}
 
-  MlirKernelSource(MlirKernelSource&& other) noexcept = default;
-  MlirKernelSource& operator=(MlirKernelSource&& other) noexcept = default;
+  MlirKernelSource(MlirKernelSource&& other) = default;
+  MlirKernelSource& operator=(MlirKernelSource&& other) = default;
 
   static absl::StatusOr<MlirKernelSource> ParseFromString(
       absl::string_view ir, std::unique_ptr<mlir::MLIRContext> context);

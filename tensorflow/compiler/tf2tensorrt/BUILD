@@ -107,6 +107,8 @@ tf_cuda_cc_test(
         "notap",
     ],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         ":trt_logging",
         ":utils",
         "//tensorflow/core:lib",

@@ -17,6 +17,8 @@ tf_cuda_library(
     srcs = ["utils.cc"],
     hdrs = ["utils.h"],
     cuda_deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         "@local_config_cuda//cuda:cudnn_header",
     ],
     visibility = ["//visibility:public"],

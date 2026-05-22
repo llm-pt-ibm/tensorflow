@@ -302,13 +302,13 @@ common:cuda_version --repo_env=HERMETIC_NCCL_VERSION="2.27.7"
 
 # CUDA: This config refers to building CUDA op kernels with nvcc.
 common:cuda --repo_env TF_NEED_CUDA=1
-common:cuda --@local_config_cuda//:enable_cuda
+common:cuda 
 common:cuda --config=cuda_version
 # This flag is needed to include CUDA libraries.
-common:cuda --@local_config_cuda//cuda:include_cuda_libs=true
+common:cuda 
 
 # This configuration is used for building the wheels.
-common:cuda_wheel --@local_config_cuda//cuda:include_cuda_libs=false
+common:cuda_wheel 
 
 common:hermetic_cuda_umd --@cuda_driver//:include_cuda_umd_libs=true
 

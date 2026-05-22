@@ -29,7 +29,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_7833f412 {
 
 enum InterpolationMethod {
   BILINEAR = 0,
@@ -356,8 +356,7 @@ __global__ void CropAndResizeBackpropBoxesKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_7833f412
 namespace functor {
 
 template <typename T>

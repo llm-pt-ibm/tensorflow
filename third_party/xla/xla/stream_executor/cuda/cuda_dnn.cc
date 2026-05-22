@@ -49,9 +49,9 @@ limitations under the License.
 #include "third_party/cudnn_frontend/include/cudnn_frontend/graph_interface.h"
 #include "third_party/cudnn_frontend/include/cudnn_frontend/graph_properties.h"
 #include "Eigen/Core"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
-#include "third_party/gpus/cuda/include/driver_types.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
+#include "driver_types.h"
 #include "xla/stream_executor/activate_context.h"
 #include "xla/stream_executor/cuda/cuda_compute_capability.h"
 #include "xla/stream_executor/cuda/cuda_diagnostics.h"
@@ -77,21 +77,21 @@ limitations under the License.
 #include "tsl/platform/tensor_float_32_utils.h"
 
 // clang-format off
-#include "third_party/gpus/cuda/include/library_types.h"
-#include "third_party/gpus/cudnn/cudnn_version.h"
+#include "library_types.h"
+#include "cudnn_version.h"
 
 #if CUDNN_VERSION >= 90000
-#include "third_party/gpus/cudnn/cudnn_adv.h"
-#include "third_party/gpus/cudnn/cudnn_cnn.h"
-#include "third_party/gpus/cudnn/cudnn_ops.h"
-#include "third_party/gpus/cudnn/cudnn_graph.h"
+#include "cudnn_adv.h"
+#include "cudnn_cnn.h"
+#include "cudnn_ops.h"
+#include "cudnn_graph.h"
 #else
-#include "third_party/gpus/cudnn/cudnn_adv_infer.h"
-#include "third_party/gpus/cudnn/cudnn_adv_train.h"
-#include "third_party/gpus/cudnn/cudnn_cnn_infer.h"
-#include "third_party/gpus/cudnn/cudnn_cnn_train.h"
-#include "third_party/gpus/cudnn/cudnn_ops_infer.h"
-#include "third_party/gpus/cudnn/cudnn_ops_train.h"
+#include "cudnn_adv_infer.h"
+#include "cudnn_adv_train.h"
+#include "cudnn_cnn_infer.h"
+#include "cudnn_cnn_train.h"
+#include "cudnn_ops_infer.h"
+#include "cudnn_ops_train.h"
 #endif
 
 #include "third_party/cudnn_frontend/include/cudnn_frontend.h"

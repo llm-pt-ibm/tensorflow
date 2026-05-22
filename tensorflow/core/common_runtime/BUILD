@@ -72,6 +72,8 @@ tf_cuda_library(
     features = ["-layering_check"],
     visibility = ["//visibility:public"],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         ":core_cpu_internal",
     ],
 )

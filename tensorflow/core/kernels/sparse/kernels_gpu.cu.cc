@@ -35,7 +35,7 @@ typedef Eigen::GpuDevice GPUDevice;
 
 namespace functor {
 
-namespace {
+inline namespace ppc64le_anon_a5fec96a {
 struct StridedDataReader {
   StridedDataReader(const int64_t* begin, int stride)
       : begin_(begin), stride_(stride) {}
@@ -47,8 +47,7 @@ struct StridedDataReader {
   const int64_t* begin_;
   const int stride_;
 };
-}  // namespace
-
+}  // namespace ppc64le_anon_a5fec96a
 template <>
 absl::Status CalculateNNZPerBatchMatrixFromIndices<GPUDevice>::operator()(
     OpKernelContext* c, TTypes<int64_t>::ConstMatrix indices,

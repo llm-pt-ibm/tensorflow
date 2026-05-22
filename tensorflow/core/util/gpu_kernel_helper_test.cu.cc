@@ -41,7 +41,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_a519cde8 {
 
 __global__ void SetOutbufZero(GpuLaunchConfig config,
                               int* __restrict__ outbuf) {
@@ -141,8 +141,7 @@ __global__ void GpuShuffleGetSrcLaneTest(unsigned* __restrict__ failure_count) {
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_a519cde8
 class GpuLaunchConfigTest : public ::testing::Test {
  protected:
   static const int bufsize = 1024;

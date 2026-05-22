@@ -36,7 +36,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_c4b5aba6 {
 
 struct SparseSliceSelectFunctor {
   SparseSliceSelectFunctor(int dims,
@@ -96,8 +96,7 @@ __global__ void SparseSliceGatherKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_c4b5aba6
 namespace functor {
 
 template <typename T>

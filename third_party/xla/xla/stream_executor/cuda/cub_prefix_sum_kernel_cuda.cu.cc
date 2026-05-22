@@ -16,8 +16,8 @@ limitations under the License.
 #include <cstddef>
 
 #include "cub/block/block_scan.cuh"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_fp16.h"
+#include "cuda.h"
+#include "cuda_fp16.h"
 #include "xla/stream_executor/cuda/cuda_platform_id.h"
 #include "xla/stream_executor/gpu/gpu_kernel_registry.h"
 #include "xla/stream_executor/gpu/prefix_sum_kernel.h"
@@ -26,7 +26,7 @@ limitations under the License.
 namespace se = stream_executor;
 
 namespace stream_executor::cuda {
-namespace {
+inline namespace ppc64le_anon_cb46709e {
 
 template <unsigned int BLOCK_SIZE, typename ElementT>
 __device__ void RowPrefixSum(const ElementT* data_in, ElementT* data_out,
@@ -162,8 +162,7 @@ XLA_CUB_PREFIX_SUM_KERNEL_SPEC(U32, uint32_t)
 XLA_CUB_PREFIX_SUM_KERNEL_SPEC(U64, uint64_t)
 #endif
 
-}  // namespace
-
+}  // namespace ppc64le_anon_cb46709e
 #define REGISTER_PREFIX_SUM_KERNEL(primitive_type)                 \
   GPU_KERNEL_REGISTRY_REGISTER_KERNEL_STATICALLY(                  \
       PrefixSum##primitive_type##Kernel,                           \

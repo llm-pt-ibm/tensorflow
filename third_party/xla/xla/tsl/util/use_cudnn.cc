@@ -22,7 +22,7 @@ limitations under the License.
 #include "tsl/platform/stringpiece.h"
 
 #if GOOGLE_CUDA
-#include "third_party/gpus/cudnn/cudnn.h"
+#include "cudnn.h"
 #endif  // GOOGLE_CUDA
 
 namespace tsl {

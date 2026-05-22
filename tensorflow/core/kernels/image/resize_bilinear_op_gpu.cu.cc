@@ -30,7 +30,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_41dee6e1 {
 
 template <typename T>
 __global__ void ResizeBilinearKernel_faster(
@@ -390,8 +390,7 @@ __global__ void LegacyResizeBilinearGradKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_41dee6e1
 namespace functor {
 
 // Partial specialization of ResizeBilinear functor for a GPUDevice.

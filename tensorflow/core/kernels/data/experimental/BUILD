@@ -40,6 +40,8 @@ tf_kernel_library(
     srcs = ["assert_cardinality_dataset_op.cc"],
     hdrs = ["assert_cardinality_dataset_op.h"],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         "//tensorflow/core:experimental_dataset_ops_op_lib",
         "//tensorflow/core:framework",
         "//tensorflow/core/data:name_utils",

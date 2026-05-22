@@ -29,7 +29,7 @@ namespace tensorflow {
 namespace functor {
 
 typedef Eigen::GpuDevice GPUDevice;
-namespace {
+inline namespace ppc64le_anon_0650fd59 {
 __device__ int PermutationOrder(int n, const int* __restrict__ pivots) {
   // Compute the order of the permutation from the number of transpositions
   // encoded in the pivot array, see:
@@ -42,8 +42,7 @@ __device__ int PermutationOrder(int n, const int* __restrict__ pivots) {
   }
   return order;
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_0650fd59
 // This kernel computes either determinant or log_abs_determinant, depending
 // on the value of the template parameter. If compute_log_abs_det is false,
 // the sign argument is ignored.

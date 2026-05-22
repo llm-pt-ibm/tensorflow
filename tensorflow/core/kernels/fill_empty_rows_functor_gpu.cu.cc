@@ -64,7 +64,7 @@ using kernel_forward::wrap_kernel_call;
 
 namespace functor {
 
-namespace {
+inline namespace ppc64le_anon_b4170aee {
 template <typename To>
 struct CastFunctor {
   template <typename From>
@@ -155,8 +155,7 @@ __global__ __launch_bounds__(1024) void ScatterNewElementsKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_b4170aee
 template <typename T, typename Tindex, bool RaggedOperands>
 struct FillEmptyRows<GPUDevice, T, Tindex, RaggedOperands> {
   Status operator()(OpKernelContext* context, const Tensor& default_value_t,

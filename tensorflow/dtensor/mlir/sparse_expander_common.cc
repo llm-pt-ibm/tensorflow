@@ -21,7 +21,12 @@ limitations under the License.
 #include "tensorflow/core/platform/errors.h"
 #include "tensorflow/dtensor/cc/dstatus.h"
 
+#include "llvm/Support/Casting.h"
 namespace tensorflow {
+using llvm::cast;
+using llvm::isa;
+using llvm::dyn_cast;
+
 namespace dtensor {
 
 StatusOr<mlir::TF::SparseToDenseOp> GetSparseToDenseOp(mlir::Value value) {

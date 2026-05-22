@@ -84,6 +84,12 @@ CreateThunkOperationsAsPtrs(const ThunkSequence& thunk_sequence);
 // graph from a thunk sequence.
 class ThunkOperation : public ExecutionGraph::Operation {
  public:
+  // GCC 8 ppc64le: explicit delete forces move_if_noexcept to use move
+  ThunkOperation(const ThunkOperation&) = delete;
+  ThunkOperation& operator=(const ThunkOperation&) = delete;
+  ThunkOperation(ThunkOperation&&) = default;
+  ThunkOperation& operator=(ThunkOperation&&) = default;
+ public:
   explicit ThunkOperation(Thunk* thunk)
       : name_(absl::StrFormat("op: %s (kind: %v)", thunk->info().op_name,
                               thunk->kind())),

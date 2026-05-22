@@ -25,7 +25,7 @@ namespace stream_executor::rocm {
 // relative error does not exceed the passed rel_error_threshold. Write the
 // number of mismatches into out parameter mismatch_count.
 
-namespace {
+inline namespace ppc64le_anon_46e3068f {
 
 static void RegisterBufferComparatorKernelRocmImpl() {
   auto register_kernel = [&](auto primitive_type_constant) {
@@ -37,7 +37,7 @@ static void RegisterBufferComparatorKernelRocmImpl() {
   xla::primitive_util::FloatingPointTypeForEach(register_kernel);
 }
 
-}  // namespace
+}  // namespace ppc64le_anon_46e3068f
 }  // namespace stream_executor::rocm
 
 STREAM_EXECUTOR_REGISTER_MODULE_INITIALIZER(

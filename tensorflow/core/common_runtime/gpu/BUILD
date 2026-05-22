@@ -52,6 +52,8 @@ cc_library(
     copts = tf_copts(),
     visibility = ["//visibility:public"],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         "//tensorflow/core/common_runtime/device:device_event_mgr",
     ],
 )

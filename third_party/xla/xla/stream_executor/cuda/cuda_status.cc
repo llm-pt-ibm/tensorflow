@@ -20,9 +20,9 @@ limitations under the License.
 #include "absl/status/status.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
-#include "third_party/gpus/cuda/include/driver_types.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
+#include "driver_types.h"
 
 namespace stream_executor::cuda::internal {
 

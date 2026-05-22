@@ -17,8 +17,8 @@ limitations under the License.
 
 #include "cub/device/device_radix_sort.cuh"
 #include "cub/device/device_segmented_radix_sort.cuh"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_fp16.h"
+#include "cuda.h"
+#include "cuda_fp16.h"
 #include "xla/stream_executor/cuda/cub_sort_kernel_cuda.h"
 
 namespace stream_executor {

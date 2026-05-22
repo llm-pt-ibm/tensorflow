@@ -167,7 +167,7 @@ def _nccl_autoconf_impl(repository_ctx):
                 "#define TF_NCCL_VERSION \"%s\"" % nccl_version,
             )
         else:
-            repository_ctx.file("nccl_config.h", "#define TF_NCCL_VERSION \"\"")
+            repository_ctx.file("nccl_config.h", "#define TF_NCCL_VERSION \"2\"")
     else:
         _create_local_nccl_repository(repository_ctx)
 

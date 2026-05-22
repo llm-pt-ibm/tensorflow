@@ -21,15 +21,15 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_target.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_target.h"
+#include "cupti.h"
+#include "cupti_profiler_target.h"
+#include "cupti_target.h"
 #include "xla/backends/profiler/gpu/cupti_interface.h"
 #include "tsl/platform/test.h"
 
 #if CUPTI_PM_SAMPLING_SUPPORTED  // Defined in cupti_interface.h
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_pmsampling.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_host.h"
+#include "cupti_pmsampling.h"
+#include "cupti_profiler_host.h"
 #endif
 
 namespace xla {

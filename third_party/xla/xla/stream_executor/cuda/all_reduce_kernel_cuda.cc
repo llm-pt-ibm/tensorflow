@@ -1,3 +1,5 @@
+// ppc64le GCC patch: this .cc includes .cu.h with __global__ - requires NVCC
+#ifdef __CUDACC__
 /* Copyright 2025 The OpenXLA Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +19,8 @@ limitations under the License.
 #include <cstdint>
 
 #include "absl/base/casts.h"
-#include "third_party/gpus/cuda/include/cuda/atomic"
-#include "third_party/gpus/cuda/include/cuda_bf16.h"
+#include "cuda/atomic"
+#include "cuda_bf16.h"
 #include "xla/stream_executor/cuda/collective_signal_cuda.cu.h"  // IWYU pragma: keep
 #include "xla/stream_executor/cuda/cuda_platform_id.h"
 #include "xla/stream_executor/gpu/all_reduce_kernel.h"
@@ -77,3 +79,5 @@ REGISTER_ALL_REDUCE_KERNEL_IMPL(AddF32, float, float, SUM, kMultimem);
 // AllReduce doesn't have a corresponding reduction kind for logical operations.
 // NCCL uses MAX and MIN on uint8_t for logical operations.
 REGISTER_ALL_REDUCE_KERNEL(OrPRED, bool, uint8_t, MAX);
+
+#endif  // __CUDACC__

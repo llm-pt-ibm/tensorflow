@@ -56,7 +56,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_1b9ae9c7 {
 
 template <typename T>
 __global__ void RangeInitKernel(const T start, const T delta, const int32 size,
@@ -167,8 +167,7 @@ class BoundedOutputIterator
   }
 };
 
-}  // namespace
-
+}  // namespace ppc64le_anon_1b9ae9c7
 // The current implementation has memory cost on GPU
 // I + P + max(3N + R + P, O + N), where:
 // I - the size of the input

@@ -66,6 +66,8 @@ tf_mkl_kernel_library(
         "mkl_matmul_ops_common.h",
     ],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         "//tensorflow/core:graph",
         "//tensorflow/core/kernels:batch_matmul_op",
         "//tensorflow/core/kernels:matmul_op",

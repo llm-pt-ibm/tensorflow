@@ -19,9 +19,9 @@ limitations under the License.
 #include <stddef.h>
 #include <stdint.h>
 
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_target.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cupti.h"
+#include "cupti_profiler_target.h"
+#include "cuda.h"
 #include "xla/backends/profiler/gpu/cupti_interface.h"
 
 namespace xla {

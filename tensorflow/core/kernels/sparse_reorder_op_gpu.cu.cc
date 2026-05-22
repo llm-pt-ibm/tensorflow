@@ -26,7 +26,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_5c61c785 {
 
 __global__ void IndicesFlattenKernel(const int64* __restrict__ indices,
                                      const int64 nnz,
@@ -59,8 +59,7 @@ __global__ void PermuteIndicesAndValuesKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_5c61c785
 using GPUDevice = Eigen::GpuDevice;
 
 namespace functor {

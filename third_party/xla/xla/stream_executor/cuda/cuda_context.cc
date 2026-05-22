@@ -20,7 +20,7 @@ limitations under the License.
 
 #include "absl/log/check.h"
 #include "absl/log/log.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 #include "xla/stream_executor/cuda/cuda_status.h"
 #include "xla/stream_executor/gpu/context_map.h"
 #include "xla/stream_executor/gpu/scoped_activate_context.h"

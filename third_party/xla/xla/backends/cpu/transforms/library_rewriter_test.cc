@@ -63,7 +63,7 @@ class CpuLibraryTest : public TargetMachineTestBase {
 
   static const DotRewriteTestSpec& GetDefaultTestSpec() {
     static const absl::NoDestructor<DotRewriteTestSpec> kDefaultTestSpec(
-        {"ynn", "f32", "f32", "znver3", "+avx,+avx2", "dot"});
+        DotRewriteTestSpec{"ynn", "f32", "f32", "znver3", "+avx,+avx2", "dot"});
     return *kDefaultTestSpec;
   }
 

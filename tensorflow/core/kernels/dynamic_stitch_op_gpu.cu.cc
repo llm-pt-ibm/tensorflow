@@ -26,7 +26,7 @@ namespace tensorflow {
 
 using GPUDevice = Eigen::GpuDevice;
 
-namespace {
+inline namespace ppc64le_anon_8d89e8d7 {
 
 template <typename T>
 __global__ void DynamicStitchKernel(const int32 slice_size,
@@ -46,8 +46,7 @@ __global__ void DynamicStitchKernel(const int32 slice_size,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_8d89e8d7
 template <typename T>
 void DynamicStitchGPUImpl(const Eigen::GpuDevice& gpu_device,
                           const int32 slice_size, const int32 first_dim_size,

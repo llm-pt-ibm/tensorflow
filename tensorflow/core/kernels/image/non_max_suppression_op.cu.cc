@@ -31,7 +31,7 @@ limitations under the License.
 #include "tensorflow/core/util/gpu_launch_config.h"
 
 namespace tensorflow {
-namespace {
+inline namespace ppc64le_anon_ae997be0 {
 
 struct
 #if GOOGLE_CUDA
@@ -662,8 +662,7 @@ class NonMaxSuppressionV4GPUOp : public OpKernel {
   bool pad_to_max_output_size_;
 };
 
-}  // namespace
-
+}  // namespace ppc64le_anon_ae997be0
 absl::Status NmsGpu(const float* d_sorted_boxes_float_ptr, const int num_boxes,
                     const float iou_threshold, int* d_selected_indices,
                     int* h_nkeep, OpKernelContext* context, const int max_boxes,

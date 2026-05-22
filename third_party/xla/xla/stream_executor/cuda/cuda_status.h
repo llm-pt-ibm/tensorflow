@@ -19,8 +19,8 @@ limitations under the License.
 #include "absl/base/optimization.h"
 #include "absl/status/status.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
 
 namespace stream_executor::cuda {
 

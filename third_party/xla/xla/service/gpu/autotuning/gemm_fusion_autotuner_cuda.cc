@@ -18,7 +18,7 @@ limitations under the License.
 #include <vector>
 
 #include "absl/status/statusor.h"
-#include "third_party/gpus/cuda/include/cublas_v2.h"
+#include "cublas_v2.h"
 #include "xla/backends/autotuner/codegen_backend.h"
 #include "xla/backends/gpu/autotuner/cudnn.h"
 #include "xla/hlo/ir/hlo_casting_utils.h"

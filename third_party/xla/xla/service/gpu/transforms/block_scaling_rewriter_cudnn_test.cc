@@ -17,7 +17,7 @@ limitations under the License.
 #include <gtest/gtest.h>
 #include "absl/status/status_matchers.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cudnn/cudnn_version.h"
+#include "cudnn_version.h"
 #include "xla/error_spec.h"
 #include "xla/hlo/ir/hlo_module.h"
 #include "xla/service/gpu/transforms/block_scaling_rewriter.h"

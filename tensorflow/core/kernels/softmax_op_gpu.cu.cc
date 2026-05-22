@@ -32,7 +32,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_52df6a5c {
 
 template <typename T>
 struct softmax_traits {
@@ -170,8 +170,7 @@ void DoRowReduction(OpKernelContext* context, T* output, InputIter input,
   functor::ReduceImpl<T, Op, T*, InputIter, ReductionAxes>(
       context, output, input, 2, rows, cols, 1, 1, constants.kOne, op);
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_52df6a5c
 template <typename T>
 class SoftmaxOpGPU : public OpKernel {
  public:

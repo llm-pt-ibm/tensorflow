@@ -58,6 +58,9 @@ namespace {
 // execution graph from a command sequence.
 class CommandOperation : public ExecutionGraph::Operation {
  public:
+  CommandOperation(CommandOperation&&) noexcept = default;
+  CommandOperation& operator=(CommandOperation&&) noexcept = default;
+
   explicit CommandOperation(Command::BufferUseVector buffers,
                             const Command* cmd)
       : name_(absl::StrFormat("cmd %s: %s", cmd->ToString(),

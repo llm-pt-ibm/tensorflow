@@ -30,7 +30,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_10768b84 {
 
 template <typename T>
 __global__ void ResizeNearestNeighborNHWC(
@@ -152,8 +152,7 @@ __global__ void LegacyResizeNearestNeighborBackwardNHWC(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_10768b84
 namespace functor {
 
 // Partial specialization of ResizeNearestNeighbor functor for a GPUDevice.

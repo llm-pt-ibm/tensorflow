@@ -38,7 +38,12 @@ limitations under the License.
 #include "tensorflow/dtensor/mlir/op_utils.h"
 #include "tensorflow/dtensor/mlir/utils/dtensor_mlir_passes_internal.h"
 
+#include "llvm/Support/Casting.h"
 namespace tensorflow {
+using llvm::cast;
+using llvm::isa;
+using llvm::dyn_cast;
+
 namespace dtensor {
 namespace {
 class ConditionalPrinter : public DataDumperLoggerConfig {

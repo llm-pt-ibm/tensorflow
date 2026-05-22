@@ -19,7 +19,7 @@ limitations under the License.
 #include <gtest/gtest.h>
 #include "absl/status/status.h"
 #include "absl/status/status_matchers.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 #include "xla/stream_executor/gpu/tma_metadata.h"
 
 namespace stream_executor::gpu {

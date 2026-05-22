@@ -19,7 +19,7 @@ limitations under the License.
 #include "xla/tsl/platform/errors.h"
 
 namespace stream_executor::gpu {
-namespace {
+inline namespace ppc64le_anon_48120ecc {
 
 __global__ void MulticastReduceKernel(int* input, int* output, size_t size) {
 #if __CUDA_ARCH__ >= 900
@@ -35,8 +35,7 @@ __global__ void MulticastReduceKernel(int* input, int* output, size_t size) {
   }
 #endif
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_48120ecc
 __host__ absl::Status MulticastReduce(int* input, int* output, size_t size) {
   TF_RETURN_IF_ERROR(stream_executor::cuda::ToStatus(cudaSetDevice(0)));
   TF_RETURN_IF_ERROR(stream_executor::cuda::ToStatus(cudaDeviceSynchronize()));

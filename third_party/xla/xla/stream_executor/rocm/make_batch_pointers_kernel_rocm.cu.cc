@@ -22,7 +22,7 @@ limitations under the License.
 #include "xla/stream_executor/rocm/rocm_platform_id.h"
 
 namespace stream_executor::rocm {
-namespace {
+inline namespace ppc64le_anon_064223de {
 __global__ void MakeBatchPointers(char* base, size_t stride, size_t n,
                                   void** ptrs_out) {
   size_t idx = size_t(threadIdx.x) + size_t(blockIdx.x) * size_t(blockDim.x);
@@ -31,7 +31,7 @@ __global__ void MakeBatchPointers(char* base, size_t stride, size_t n,
   }
   ptrs_out[idx] = base + idx * stride;
 }
-}  // namespace
+}  // namespace ppc64le_anon_064223de
 }  // namespace stream_executor::rocm
 
 GPU_KERNEL_REGISTRY_REGISTER_KERNEL_STATICALLY(

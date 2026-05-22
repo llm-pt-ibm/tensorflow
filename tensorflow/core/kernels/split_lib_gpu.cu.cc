@@ -66,7 +66,7 @@ TF_CALL_COMPLEX_TYPES(DEFINE_GPU_KERNELS);
 
 }  // namespace functor
 
-namespace {
+inline namespace ppc64le_anon_f8a3dfae {
 
 template <typename T>
 __global__ void SplitOpKernel(const T* __restrict__ input,
@@ -102,8 +102,7 @@ __global__ void SplitOpKernel(const T* __restrict__ input,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_f8a3dfae
 // cannot be in anonymous namespace due to extern shared memory
 // very similar to the concat kernel except the input/output logic
 // is reversed

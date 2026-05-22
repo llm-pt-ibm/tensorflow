@@ -15,8 +15,8 @@ limitations under the License.
 
 #include "absl/base/no_destructor.h"
 #include "absl/types/span.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_callbacks.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_driver_cbid.h"
+#include "cupti_callbacks.h"
+#include "cupti_driver_cbid.h"
 #include "xla/backends/profiler/gpu/cuda_version_variants.h"
 
 namespace xla {
@@ -28,7 +28,7 @@ const CbidCategoryMap& GetExtraCallbackIdCategories12000() {
   if (GetSafeCudaVersion() < 12000) {
     return EmptyCallbackIdCategories();
   }
-  static const absl::NoDestructor<CbidCategoryMap> kCbidCategoryMap({
+  static const absl::NoDestructor<CbidCategoryMap> kCbidCategoryMap(CbidCategoryMap{
       {CUPTI_DRIVER_TRACE_CBID_cuLaunchKernelEx /* 652 */,
        CbidCategory::kKernel},
       {CUPTI_DRIVER_TRACE_CBID_cuGraphInstantiateWithFlags /* 643 */,

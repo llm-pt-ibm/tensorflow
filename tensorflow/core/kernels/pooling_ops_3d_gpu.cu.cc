@@ -25,7 +25,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_34f53e2a {
 
 template <typename dtype>
 __global__ void MaxPoolGradBackwardNoMaskNCDHW(
@@ -130,8 +130,7 @@ __global__ void MaxPoolGradBackwardNoMaskNDHWC(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_34f53e2a
 namespace functor {
 
 template <typename T>

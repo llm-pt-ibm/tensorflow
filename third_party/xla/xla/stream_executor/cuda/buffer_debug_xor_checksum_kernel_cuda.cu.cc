@@ -18,7 +18,7 @@ limitations under the License.
 #include <cstring>
 
 #include "absl/base/casts.h"
-#include "third_party/gpus/cuda/include/cuda/atomic"
+#include "cuda/atomic"
 #include "xla/backends/gpu/runtime/buffer_debug_log_structs.h"
 #include "xla/stream_executor/cuda/cuda_platform_id.h"
 #include "xla/stream_executor/gpu/buffer_debug_xor_checksum_kernel.h"
@@ -28,7 +28,7 @@ limitations under the License.
 
 namespace se = stream_executor;
 
-namespace {
+inline namespace ppc64le_anon_88eb5746 {
 
 __device__ unsigned int ThreadIdx() {
   return threadIdx.z * blockDim.y * blockDim.x + threadIdx.y * blockDim.x +
@@ -201,8 +201,7 @@ se::KernelLoaderSpec GetChecksumKernelSpec(int arity) {
       arity);
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_88eb5746
 GPU_KERNEL_REGISTRY_REGISTER_KERNEL_STATICALLY(
     BufferDebugXorChecksumKernel, se::gpu::BufferDebugXorChecksumKernel,
     se::cuda::kCudaPlatformId, GetChecksumKernelSpec);

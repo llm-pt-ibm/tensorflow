@@ -19,8 +19,8 @@ limitations under the License.
 #include <cstdint>  // IWYU pragma: keep
 
 #include "absl/status/status.h"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_fp16.h"  // IWYU pragma: keep
+#include "cuda.h"
+#include "cuda_fp16.h"  // IWYU pragma: keep
 #include "xla/backends/gpu/ffi.h"
 #include "xla/ffi/ffi.h"
 #include "xla/ffi/ffi_api.h"  // IWYU pragma: keep
@@ -221,3 +221,17 @@ XLA_CUB_DEFINE_SORT_PAIRS(u64_b64, uint64_t, uint64_t)
 
 }  // namespace cuda
 }  // namespace stream_executor
+
+
+// ppc64le patch: dummy for missing .cu.cc symbol
+#include <cuda_runtime_api.h>
+namespace stream_executor {
+namespace cuda {
+  template <typename T>
+  cudaError CubSortKeys(void*, unsigned long&, void const*, void*, unsigned long, bool, unsigned long, CUstream_st*) { return cudaSuccess; }
+
+  template <typename K, typename V>
+  cudaError CubSortPairs(void*, unsigned long&, void const*, void*, void const*, void*, unsigned long, bool, unsigned long, CUstream_st*) { return cudaSuccess; }
+}
+}
+

@@ -2977,17 +2977,13 @@ def tf_genrule_cmd_append_to_srcs(to_append):
             " >> $(@)")
 
 def _local_exec_transition_impl(settings, attr):
-    modify_execution_info = settings["//command_line_option:modify_execution_info"]
-    return {
-        # Force all targets in the subgraph to build on the local machine.
-        "//command_line_option:modify_execution_info": modify_execution_info + [".*=+no-remote-exec"],
-    }
+    return {}
 
 # A transition that forces all targets in the subgraph to be built locally.
 _local_exec_transition = transition(
     implementation = _local_exec_transition_impl,
-    inputs = ["//command_line_option:modify_execution_info"],
-    outputs = ["//command_line_option:modify_execution_info"],
+    inputs = [],
+    outputs = [],
 )
 
 def _local_genrule_impl(ctx):

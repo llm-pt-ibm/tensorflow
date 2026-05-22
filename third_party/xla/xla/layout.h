@@ -461,8 +461,8 @@ class Layout {
  private:
   // The primitive type to use for sparse array indices and pointers.  Each of
   // these must either be INVALID, or an unsigned integer type.
-  PrimitiveType index_primitive_type_ : 8;
-  PrimitiveType pointer_primitive_type_ : 8;
+  PrimitiveType index_primitive_type_ : 16;
+  PrimitiveType pointer_primitive_type_ : 16;
 
   // The assigned memory space.
   int8_t memory_space_ = 0;

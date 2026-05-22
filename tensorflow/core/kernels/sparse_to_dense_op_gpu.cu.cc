@@ -29,7 +29,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_46f9cfbf {
 
 template <typename T, typename Index>
 __global__ void SparseToDenseKernel(const Index* __restrict__ indices,
@@ -133,8 +133,7 @@ Status LaunchComputeKernels(OpKernelContext* c, const int64 dense_size,
   return OkStatus();
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_46f9cfbf
 namespace functor {
 
 template <typename T, typename Index>

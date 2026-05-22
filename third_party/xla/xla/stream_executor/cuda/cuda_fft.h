@@ -25,7 +25,7 @@ limitations under the License.
 
 #include "absl/log/log.h"
 #include "absl/status/status.h"
-#include "third_party/gpus/cuda/include/cufft.h"
+#include "cufft.h"
 #include "xla/stream_executor/fft.h"
 #include "xla/stream_executor/scratch_allocator.h"
 #include "xla/stream_executor/stream.h"

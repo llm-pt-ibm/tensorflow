@@ -23,7 +23,7 @@ limitations under the License.
 #include "tensorflow/core/util/gpu_kernel_helper.h"
 
 namespace tensorflow {
-namespace {
+inline namespace ppc64le_anon_94520bd7 {
 
 using GPUDevice = Eigen::GpuDevice;
 
@@ -138,8 +138,7 @@ __global__ void D2S_NCHW_LOOP(const int32 nthreads,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_94520bd7
 // Specialization of DepthToSpaceOpFunctor for a GPUDevice.
 namespace functor {
 

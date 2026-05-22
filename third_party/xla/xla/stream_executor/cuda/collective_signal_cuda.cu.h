@@ -18,7 +18,7 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "third_party/gpus/cuda/include/cuda/atomic"
+#include "cuda/atomic"
 #include "xla/stream_executor/gpu/collective_signal.cu.h"
 
 namespace stream_executor::gpu {

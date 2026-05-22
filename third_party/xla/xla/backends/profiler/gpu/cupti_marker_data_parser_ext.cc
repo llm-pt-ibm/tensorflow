@@ -19,8 +19,8 @@ limitations under the License.
 #include <string>
 #include <utility>
 
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/include/nvtx3/nvToolsExtPayload.h"
+#include "cupti.h"
+#include "nvtx3/nvToolsExtPayload.h"
 #include "xla/backends/profiler/gpu/cupti_marker_data_parser.h"
 #include "xla/backends/profiler/gpu/cupti_nvtx_ext_payload.h"
 

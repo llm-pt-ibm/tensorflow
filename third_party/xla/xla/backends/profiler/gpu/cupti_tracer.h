@@ -25,8 +25,8 @@ limitations under the License.
 #include <vector>
 
 #include "absl/status/status.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/include/nvtx3/nvToolsExt.h"
+#include "cupti.h"
+#include "nvtx3/nvToolsExt.h"
 #include "xla/backends/profiler/gpu/cupti_buffer_events.h"
 #include "xla/backends/profiler/gpu/cupti_collector.h"
 #include "xla/backends/profiler/gpu/cupti_interface.h"

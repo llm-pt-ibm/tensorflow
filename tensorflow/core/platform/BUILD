@@ -113,6 +113,8 @@ cc_library(
     name = "abi",
     hdrs = ["abi.h"],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         "@tsl//tsl/platform:abi",
     ],
 )

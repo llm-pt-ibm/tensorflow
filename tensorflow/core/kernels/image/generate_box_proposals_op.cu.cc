@@ -35,7 +35,7 @@ limitations under the License.
 namespace tensorflow {
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_88f44bb9 {
 
 // Decode d_bbox_deltas with respect to anchors into absolute coordinates,
 // clipping if necessary.
@@ -281,8 +281,7 @@ __global__ void InitializeDataKernel(const Gpu2DLaunchConfig config,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_88f44bb9
 class GenerateBoundingBoxProposals : public tensorflow::OpKernel {
  public:
   explicit GenerateBoundingBoxProposals(

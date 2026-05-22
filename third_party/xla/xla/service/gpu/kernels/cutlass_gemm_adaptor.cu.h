@@ -21,7 +21,7 @@ limitations under the License.
 #include <memory>
 #include <optional>
 
-#include "third_party/gpus/cuda/include/vector_types.h"
+#include "vector_types.h"
 #include "cute/layout.hpp"
 #include "cutlass/cutlass.h"
 #include "cutlass/device_kernel.h"

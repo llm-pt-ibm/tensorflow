@@ -30,7 +30,7 @@ namespace functor {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_32852e04 {
 
 struct FloatToHalf {
   __host__ __device__ EIGEN_STRONG_INLINE Eigen::half operator()(
@@ -57,8 +57,7 @@ strict_cast<Eigen::half, float>(float t) {
   return FloatToHalf()(t);
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_32852e04
 template <typename T>
 struct TensorZero<GPUDevice, T> {
   void operator()(const GPUDevice& d, typename TTypes<T>::Flat t) {

@@ -23,12 +23,12 @@ limitations under the License.
 #include "absl/status/statusor.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cuda/include/library_types.h"
-#include "third_party/gpus/cudnn/cudnn_version.h"
+#include "library_types.h"
+#include "cudnn_version.h"
 #if CUDNN_VERSION >= 90000
-#include "third_party/gpus/cudnn/cudnn_graph.h"
+#include "cudnn_graph.h"
 #else
-#include "third_party/gpus/cudnn/cudnn_ops_infer.h"
+#include "cudnn_ops_infer.h"
 #endif
 #include "xla/stream_executor/semantic_version.h"
 #include "xla/tsl/platform/errors.h"

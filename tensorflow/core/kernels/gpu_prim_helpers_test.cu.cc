@@ -27,7 +27,7 @@ limitations under the License.
 #include "tensorflow/core/platform/test.h"
 
 namespace tensorflow {
-namespace {
+inline namespace ppc64le_anon_4fb30817 {
 
 template <typename Tkey, typename Tindex>
 class TestGpuRadixSortKernel : public tensorflow::OpKernel {
@@ -425,7 +425,7 @@ TEST_F(GpuPrimHelpersTest, GpuSelectFlagged_Empty) {
   test::ExpectTensorEqual<int32>(expected_output, *GetOutput(0));
 }
 
-}  // namespace
+}  // namespace ppc64le_anon_4fb30817
 }  // namespace tensorflow
 
 #endif  // GOOGLE_CUDA || TENSORFLOW_USE_ROCM

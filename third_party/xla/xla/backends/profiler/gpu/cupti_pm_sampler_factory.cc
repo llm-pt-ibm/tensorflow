@@ -17,7 +17,7 @@ limitations under the License.
 #include <memory>
 
 #include "absl/status/statusor.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_version.h"
+#include "cupti_version.h"
 #include "xla/backends/profiler/gpu/cupti_pm_sampler.h"
 
 #if CUPTI_API_VERSION >= 24

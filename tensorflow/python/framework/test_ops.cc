@@ -882,3 +882,10 @@ REGISTER_KERNEL_BUILDER(
     Name("IsTensorFloat32Enabled").Device(DEVICE_GPU).HostMemory("enabled"),
     IsTensorFloat32Enabled);
 }  // end namespace tensorflow
+
+
+// ppc64le patch: dummy for missing .cu.cc symbol
+namespace tensorflow {
+  void GpuSleep(OpKernelContext* context, int delay) {}
+}
+

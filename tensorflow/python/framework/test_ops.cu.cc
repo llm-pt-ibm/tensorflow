@@ -21,7 +21,7 @@ typedef Eigen::GpuDevice GPUDevice;
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_850d6967 {
 
 __global__ void sleep_kernel(int seconds) {
 #if __CUDA_ARCH__ >= 700  // __nanosleep requires compute capability 7.0
@@ -35,8 +35,7 @@ __global__ void sleep_kernel(int seconds) {
 #endif
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_850d6967
 void GpuSleep(OpKernelContext* ctx, int seconds) {
   auto* cu_stream = ctx->eigen_device<GPUDevice>().stream();
   CHECK(cu_stream);  // Crash OK

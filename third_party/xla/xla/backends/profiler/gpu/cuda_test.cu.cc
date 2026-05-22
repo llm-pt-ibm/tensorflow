@@ -14,15 +14,15 @@ limitations under the License.
 ==============================================================================*/
 
 // Creates some GPU activity to test functionalities of gpuperfcounter/gputrace.
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 
 #include <stdio.h>
 
 #include <vector>
 
 #include <gtest/gtest.h>
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
-#include "third_party/gpus/cuda/include/driver_types.h"
+#include "cuda_runtime_api.h"
+#include "driver_types.h"
 #include "xla/backends/profiler/gpu/cuda_test.h"
 #include "tsl/profiler/lib/scoped_annotation.h"
 
@@ -32,7 +32,7 @@ namespace test {
 
 using tsl::profiler::ScopedAnnotation;
 
-namespace {
+inline namespace ppc64le_anon_8fc5ab6d {
 
 // Simple printf kernel.
 __global__ void simple_print() { printf("hello, world!\n"); }
@@ -47,8 +47,7 @@ unsigned *g_device_copy;
 
 unsigned *gpu0_buf, *gpu1_buf;
 
-}  // namespace
-
+}  // namespace ppc64le_anon_8fc5ab6d
 void PrintfKernel(int iters) {
   for (int i = 0; i < iters; ++i) {
     simple_print<<<1, 1>>>();

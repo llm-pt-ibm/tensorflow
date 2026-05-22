@@ -14,7 +14,7 @@ limitations under the License.
 ==============================================================================*/
 
 #include "absl/container/flat_hash_map.h"
-#include "third_party/gpus/cudnn/cudnn.h"
+#include "cudnn.h"
 #include "xla/tsl/platform/logging.h"
 #include "tsl/platform/dso_loader.h"
 #include "tsl/platform/load_library.h"

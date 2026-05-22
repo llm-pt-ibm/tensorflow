@@ -14,7 +14,7 @@ limitations under the License.
 ==============================================================================*/
 
 #include "absl/types/span.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_callbacks.h"
+#include "cupti_callbacks.h"
 #include "xla/backends/profiler/gpu/cuda_version_variants.h"
 
 namespace xla {

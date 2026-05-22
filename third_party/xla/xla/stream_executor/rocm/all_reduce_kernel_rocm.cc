@@ -1,3 +1,5 @@
+// ppc64le GCC patch: this .cc includes .cu.h with __global__ - requires NVCC
+#ifdef __CUDACC__
 /* Copyright 2025 The OpenXLA Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -76,3 +78,5 @@ REGISTER_ALL_REDUCE_KERNEL(AddF32, float, float, SUM);
 // AllReduce doesn't have a corresponding reduction kind for logical operations.
 // NCCL uses MAX and MIN on uint8_t for logical operations.
 REGISTER_ALL_REDUCE_KERNEL(OrPRED, bool, uint8_t, MAX);
+
+#endif  // __CUDACC__

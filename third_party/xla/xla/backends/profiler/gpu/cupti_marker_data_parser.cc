@@ -20,7 +20,7 @@ limitations under the License.
 #include <string>
 #include <utility>
 
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_activity.h"
+#include "cupti_activity.h"
 
 namespace xla {
 namespace profiler {

@@ -24,7 +24,7 @@ limitations under the License.
 #include <cstdint>
 
 #include "absl/log/check.h"
-#include "third_party/gpus/cuda/include/cuComplex.h"
+#include "cuComplex.h"
 
 namespace stream_executor {
 namespace cuda {

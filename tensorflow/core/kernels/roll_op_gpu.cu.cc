@@ -27,7 +27,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_d78ac69c {
 
 template <typename T>
 __global__ void RollKernel(const int32_t nthreads, const int32_t num_dims,
@@ -47,8 +47,7 @@ __global__ void RollKernel(const int32_t nthreads, const int32_t num_dims,
     output[out_idx + offset] = input[out_idx];
   }
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_d78ac69c
 namespace functor {
 
 template <typename T>

@@ -30,7 +30,7 @@ limitations under the License.
 #include "nvtx3/nvToolsExtCudaRt.h"
 #include "nvtx3/nvToolsExtMemCudaRt.h"
 #include "nvtx3/nvToolsExtPayload.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 
 namespace {
 // Get the ID of the current thread following the convention for

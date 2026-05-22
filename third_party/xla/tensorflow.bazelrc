@@ -202,10 +202,10 @@ common:cuda --repo_env TF_NEED_CUDA=1
 common:cuda --@rules_ml_toolchain//common:enable_cuda
 common:cuda --config=cuda_version
 # This flag is needed to include CUDA libraries.
-common:cuda --@local_config_cuda//cuda:include_cuda_libs=true
+common:cuda 
 
 # This configuration is used for building the wheels.
-common:cuda_wheel --@local_config_cuda//cuda:include_cuda_libs=false
+common:cuda_wheel 
 
 common:hermetic_cuda_umd --@cuda_driver//:include_cuda_umd_libs=true
 
@@ -724,8 +724,8 @@ test:rbe_cross_compile_macos_x86 --jobs=100
 # END CROSS-COMPILE CONFIGS
 
 # START PJRT RELEASE CONFIGS
-build:pjrt_release -c opt --@local_config_cuda//cuda:include_cuda_libs=false
-build:pjrt_nightly -c opt --@local_config_cuda//cuda:include_cuda_libs=true
+build:pjrt_release -c opt 
+build:pjrt_nightly -c opt 
 
 build:pjrt_x86 --cpu=k8
 build:pjrt_aarch64 --cpu=aarch64

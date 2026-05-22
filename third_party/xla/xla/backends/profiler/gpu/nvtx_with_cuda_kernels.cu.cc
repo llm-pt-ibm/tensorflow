@@ -18,15 +18,15 @@ limitations under the License.
 #include <cstddef>
 #include <vector>
 
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
-#include "third_party/gpus/cuda/include/nvtx3/nvToolsExt.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
+#include "nvtx3/nvToolsExt.h"
 
 namespace xla {
 namespace profiler {
 namespace test {
 
-namespace {
+inline namespace ppc64le_anon_d04873d7 {
 
 nvtxDomainHandle_t XProfNvtxDomain() {
   static nvtxDomainHandle_t domain = nvtxDomainCreateA("xprof");
@@ -61,8 +61,7 @@ __global__ void VecSub(const int* a, const int* b, int* c, int n) {
   if (i < n) c[i] = a[i] - b[i];
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_d04873d7
 #define SCOPEDRANGE(N) NvtxScopedRange range##__LINE__(N)
 
 std::vector<int> SimpleAddSubWithNvtxTag(int num_elements) {

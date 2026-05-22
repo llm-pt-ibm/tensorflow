@@ -100,6 +100,10 @@ namespace memory_space_assignment {
 //   add.5, operand 0
 class AllocationValue {
  public:
+  AllocationValue(AllocationValue&&) = default;
+  AllocationValue& operator=(AllocationValue&&) = default;
+
+ public:
   // This data structure wraps an HloUse and adds additional metadata that are
   // useful for allocation.
   struct Use {

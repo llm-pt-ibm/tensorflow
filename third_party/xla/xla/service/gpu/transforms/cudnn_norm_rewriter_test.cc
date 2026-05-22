@@ -21,9 +21,9 @@ limitations under the License.
 #include "xla/stream_executor/device_description.h"
 
 #if GOOGLE_CUDA
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cudnn/cudnn.h"  // IWYU pragma: keep
-#include "third_party/gpus/cudnn/cudnn_version.h"
+#include "cuda.h"
+#include "cudnn.h"  // IWYU pragma: keep
+#include "cudnn_version.h"
 #endif
 
 #include "xla/service/gpu/tests/gpu_codegen_test.h"

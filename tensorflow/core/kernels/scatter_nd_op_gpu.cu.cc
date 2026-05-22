@@ -27,7 +27,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_651bb177 {
 
 template <typename T, scatter_nd_op::UpdateOp Op>
 struct LeftUpdate {
@@ -92,8 +92,7 @@ struct LeftUpdate<std::complex<T>, scatter_nd_op::UpdateOp::SUB> {
   }
 };
 
-}  // namespace
-
+}  // namespace ppc64le_anon_651bb177
 template <typename T, typename Index, scatter_nd_op::UpdateOp op, int IXDIM>
 __global__ void ScatterNdOpKernel(
     const Index* indices, const T* updates, T* out,

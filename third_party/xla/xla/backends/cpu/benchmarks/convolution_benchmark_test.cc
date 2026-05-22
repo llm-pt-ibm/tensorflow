@@ -48,7 +48,7 @@ static const int64_t kSamePadding = 1;
 
 static const std::vector<TypeConfig>& GetTypeConfigs() {
   static const absl::NoDestructor<std::vector<TypeConfig>> v(
-      {{F32, F32, F32}, {BF16, BF16, F32}, {S8, S8, S32}});
+      std::vector<TypeConfig>{{F32, F32, F32}, {BF16, BF16, F32}, {S8, S8, S32}});
   return *v;
 }
 

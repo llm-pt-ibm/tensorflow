@@ -25,9 +25,9 @@ limitations under the License.
 #include "absl/debugging/leak_check.h"
 #include "absl/log/log.h"
 #include "absl/synchronization/mutex.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_target.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_target.h"
+#include "cupti.h"
+#include "cupti_profiler_target.h"
+#include "cupti_target.h"
 #include "xla/backends/profiler/gpu/cupti_interface.h"
 
 namespace xla {

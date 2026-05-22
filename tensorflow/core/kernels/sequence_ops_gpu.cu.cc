@@ -26,7 +26,7 @@ namespace tensorflow {
 
 using GPUDevice = Eigen::GpuDevice;
 
-namespace {
+inline namespace ppc64le_anon_5a9c0c07 {
 
 template <typename T>
 __global__ void RangeKernel(int64_t size, T start, T delta,
@@ -36,8 +36,7 @@ __global__ void RangeKernel(int64_t size, T start, T delta,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_5a9c0c07
 namespace functor {
 
 template <typename T>

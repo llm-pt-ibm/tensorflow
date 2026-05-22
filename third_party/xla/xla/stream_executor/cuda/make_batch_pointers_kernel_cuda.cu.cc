@@ -22,7 +22,7 @@ limitations under the License.
 #include "xla/stream_executor/kernel_spec.h"
 
 namespace stream_executor::cuda {
-namespace {
+inline namespace ppc64le_anon_948f2acf {
 __global__ void MakeBatchPointers(char* base, size_t stride, size_t n,
                                   void** ptrs_out) {
   size_t idx = size_t(threadIdx.x) + size_t(blockIdx.x) * size_t(blockDim.x);
@@ -31,8 +31,7 @@ __global__ void MakeBatchPointers(char* base, size_t stride, size_t n,
   }
   ptrs_out[idx] = base + idx * stride;
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_948f2acf
 }  // namespace stream_executor::cuda
 
 GPU_KERNEL_REGISTRY_REGISTER_KERNEL_STATICALLY(

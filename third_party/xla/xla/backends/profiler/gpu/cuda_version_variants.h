@@ -18,8 +18,8 @@ limitations under the License.
 
 #include "absl/container/flat_hash_map.h"
 #include "absl/types/span.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_callbacks.h"
+#include "cupti.h"
+#include "cupti_callbacks.h"
 
 namespace xla {
 namespace profiler {

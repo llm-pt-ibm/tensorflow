@@ -32,9 +32,9 @@ limitations under the License.
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
 #include "absl/synchronization/mutex.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/include/nvtx3/nvToolsExt.h"
-#include "third_party/gpus/cuda/include/nvtx3/nvToolsExtPayload.h"
+#include "cupti.h"
+#include "nvtx3/nvToolsExt.h"
+#include "nvtx3/nvToolsExtPayload.h"
 
 extern "C" CUptiResult CUPTIAPI cuptiActivityGetNvtxExtPayloadAttr(
     uint32_t cupti_domain_id, uint64_t schema_id,

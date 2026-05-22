@@ -17,7 +17,7 @@ limitations under the License.
 #define XLA_EXPERIMENTS_SM_BANDWIDTH_BENCHMARK_SM_BW_UTILS_H_
 #if GOOGLE_CUDA
 
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda_runtime_api.h"
 #include "tsl/platform/logging.h"
 
 #define CHECK_CUDA(_expr) \

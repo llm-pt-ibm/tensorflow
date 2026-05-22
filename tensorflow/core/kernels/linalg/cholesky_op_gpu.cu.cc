@@ -34,7 +34,7 @@ limitations under the License.
 namespace tensorflow {
 
 namespace functor {
-namespace {
+inline namespace ppc64le_anon_becd3683 {
 
 template <typename Scalar>
 __global__ void MatrixBandFillKernel(const int num_threads,
@@ -56,8 +56,7 @@ __global__ void MatrixBandFillKernel(const int num_threads,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_becd3683
 // Fills a banded matrix with a constant value.
 template <typename Device, typename Scalar>
 struct MatrixBandFillFunctor;

@@ -17,15 +17,15 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_activity.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_target.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_result.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cupti.h"
+#include "cupti_activity.h"
+#include "cupti_profiler_target.h"
+#include "cupti_result.h"
+#include "cuda.h"
 
 #if CUPTI_API_VERSION >= 24
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_pmsampling.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_host.h"
+#include "cupti_pmsampling.h"
+#include "cupti_profiler_host.h"
 #endif
 
 namespace xla {

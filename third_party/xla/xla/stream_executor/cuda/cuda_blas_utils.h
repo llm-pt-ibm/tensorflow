@@ -18,8 +18,8 @@ limitations under the License.
 
 
 #include "absl/status/status.h"
-#include "third_party/gpus/cuda/include/cublas_v2.h"
-#include "third_party/gpus/cuda/include/library_types.h"
+#include "cublas_v2.h"
+#include "library_types.h"
 #include "xla/stream_executor/blas.h"
 #include "tsl/platform/errors.h"
 

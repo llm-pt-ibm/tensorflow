@@ -16,13 +16,13 @@ limitations under the License.
 #include "absl/strings/string_view.h"
 
 #if CUBLAS_VER_MAJOR >= 11
-#include "third_party/gpus/cuda/include/cublas_v2.h"
+#include "cublas_v2.h"
 #else
-#include "third_party/gpus/cuda/include/cublas.h"
+#include "cublas.h"
 #endif
 
 #include "absl/container/flat_hash_set.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 #include "xla/tsl/platform/logging.h"
 #include "tsl/platform/dso_loader.h"
 #include "tsl/platform/load_library.h"

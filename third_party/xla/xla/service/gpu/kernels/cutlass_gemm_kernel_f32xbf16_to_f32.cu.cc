@@ -21,15 +21,14 @@ limitations under the License.
 
 namespace xla::gpu::kernel::gemm_universal {
 
-namespace {
+inline namespace ppc64le_anon_45b359d8 {
 
 using ElementA = float;
 using ElementB = cutlass::bfloat16_t;
 using ElementOutput = float;
 using ElementAccumulator = float;
 
-}  // namespace
-
+}  // namespace ppc64le_anon_45b359d8
 using GemmOperation = cutlass::gemm::device::GemmUniversal<
     ElementA, cutlass::layout::RowMajor, ElementB, cutlass::layout::RowMajor,
     ElementOutput, cutlass::layout::RowMajor, ElementAccumulator,

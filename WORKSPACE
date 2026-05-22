@@ -28,20 +28,20 @@ tf_http_archive(
     ),
 )
 
-load(
-    "@rules_ml_toolchain//cc/deps:cc_toolchain_deps.bzl",
-    "cc_toolchain_deps",
-)
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//cc/deps:cc_toolchain_deps.bzl",
+# PPC64LE:     "cc_toolchain_deps",
+# PPC64LE: )
 
-cc_toolchain_deps()
+# PPC64LE: cc_toolchain_deps()
 
-register_toolchains("@rules_ml_toolchain//cc:linux_x86_64_linux_x86_64")
+# PPC64LE: register_toolchains("@rules_ml_toolchain//cc:linux_x86_64_linux_x86_64")
 
-register_toolchains("@rules_ml_toolchain//cc:linux_x86_64_linux_x86_64_cuda")
+# PPC64LE: register_toolchains("@rules_ml_toolchain//cc:linux_x86_64_linux_x86_64_cuda")
 
-register_toolchains("@rules_ml_toolchain//cc:linux_aarch64_linux_aarch64")
+# PPC64LE: register_toolchains("@rules_ml_toolchain//cc:linux_aarch64_linux_aarch64")
 
-register_toolchains("@rules_ml_toolchain//cc:linux_aarch64_linux_aarch64_cuda")
+# PPC64LE: register_toolchains("@rules_ml_toolchain//cc:linux_aarch64_linux_aarch64_cuda")
 
 # Initialize the TensorFlow repository and all dependencies.
 #
@@ -107,50 +107,50 @@ load("@//tensorflow:workspace0.bzl", "tf_workspace0")
 
 tf_workspace0()
 
-load(
-    "@xla//third_party/py:python_wheel.bzl",
-    "nvidia_wheel_versions_repository",
-    "python_wheel_version_suffix_repository",
-)
+# PPC64LE: load(
+# PPC64LE:     "@xla//third_party/py:python_wheel.bzl",
+# PPC64LE:     "nvidia_wheel_versions_repository",
+# PPC64LE:     "python_wheel_version_suffix_repository",
+# PPC64LE: )
 
-nvidia_wheel_versions_repository(
-    name = "nvidia_wheel_versions",
-    versions_source = "//ci/official/requirements_updater:nvidia-requirements.txt",
-)
+# PPC64LE: nvidia_wheel_versions_repository(
+# PPC64LE:     name = "nvidia_wheel_versions",
+# PPC64LE:     versions_source = "//ci/official/requirements_updater:nvidia-requirements.txt",
+# PPC64LE: )
 
-python_wheel_version_suffix_repository(name = "tf_wheel_version_suffix")
+# PPC64LE: python_wheel_version_suffix_repository(name = "tf_wheel_version_suffix")
 
-load(
-    "@rules_ml_toolchain//gpu/cuda:cuda_json_init_repository.bzl",
-    "cuda_json_init_repository",
-)
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//gpu/cuda:cuda_json_init_repository.bzl",
+# PPC64LE:     "cuda_json_init_repository",
+# PPC64LE: )
 
-cuda_json_init_repository()
+# PPC64LE: cuda_json_init_repository()
 
-load(
-    "@cuda_redist_json//:distributions.bzl",
-    "CUDA_REDISTRIBUTIONS",
-    "CUDNN_REDISTRIBUTIONS",
-)
-load(
-    "@rules_ml_toolchain//gpu/cuda:cuda_redist_init_repositories.bzl",
-    "cuda_redist_init_repositories",
-    "cudnn_redist_init_repository",
-)
-load(
-    "@rules_ml_toolchain//gpu/cuda:cuda_redist_versions.bzl",
-    "REDIST_VERSIONS_TO_BUILD_TEMPLATES",
-)
+# PPC64LE: load(
+# PPC64LE:     "@cuda_redist_json//:distributions.bzl",
+# PPC64LE:     "CUDA_REDISTRIBUTIONS",
+# PPC64LE:     "CUDNN_REDISTRIBUTIONS",
+# PPC64LE: )
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//gpu/cuda:cuda_redist_init_repositories.bzl",
+# PPC64LE:     "cuda_redist_init_repositories",
+# PPC64LE:     "cudnn_redist_init_repository",
+# PPC64LE: )
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//gpu/cuda:cuda_redist_versions.bzl",
+# PPC64LE:     "REDIST_VERSIONS_TO_BUILD_TEMPLATES",
+# PPC64LE: )
 load("@xla//third_party/cccl:workspace.bzl", "CCCL_DIST_DICT", "CCCL_GITHUB_VERSIONS_TO_BUILD_TEMPLATES")
 
-cuda_redist_init_repositories(
-    cuda_redistributions = CUDA_REDISTRIBUTIONS | CCCL_DIST_DICT,
-    redist_versions_to_build_templates = REDIST_VERSIONS_TO_BUILD_TEMPLATES | CCCL_GITHUB_VERSIONS_TO_BUILD_TEMPLATES,
-)
+# PPC64LE: cuda_redist_init_repositories(
+# PPC64LE:     cuda_redistributions = CUDA_REDISTRIBUTIONS | CCCL_DIST_DICT,
+# PPC64LE:     redist_versions_to_build_templates = REDIST_VERSIONS_TO_BUILD_TEMPLATES | CCCL_GITHUB_VERSIONS_TO_BUILD_TEMPLATES,
+# PPC64LE: )
 
-cudnn_redist_init_repository(
-    cudnn_redistributions = CUDNN_REDISTRIBUTIONS,
-)
+# PPC64LE: cudnn_redist_init_repository(
+# PPC64LE:     cudnn_redistributions = CUDNN_REDISTRIBUTIONS,
+# PPC64LE: )
 
 load(
     "@rules_ml_toolchain//gpu/cuda:cuda_configure.bzl",
@@ -159,12 +159,12 @@ load(
 
 cuda_configure(name = "local_config_cuda")
 
-load(
-    "@rules_ml_toolchain//gpu/nccl:nccl_redist_init_repository.bzl",
-    "nccl_redist_init_repository",
-)
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//gpu/nccl:nccl_redist_init_repository.bzl",
+# PPC64LE:     "nccl_redist_init_repository",
+# PPC64LE: )
 
-nccl_redist_init_repository()
+# PPC64LE: nccl_redist_init_repository()
 
 load(
     "@rules_ml_toolchain//gpu/nccl:nccl_configure.bzl",
@@ -173,22 +173,28 @@ load(
 
 nccl_configure(name = "local_config_nccl")
 
-load(
-    "@rules_ml_toolchain//gpu/nvshmem:nvshmem_json_init_repository.bzl",
-    "nvshmem_json_init_repository",
-)
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//gpu/nvshmem:nvshmem_json_init_repository.bzl",
+# PPC64LE:     "nvshmem_json_init_repository",
+# PPC64LE: )
 
-nvshmem_json_init_repository()
+# PPC64LE: nvshmem_json_init_repository()
 
-load(
-    "@nvshmem_redist_json//:distributions.bzl",
-    "NVSHMEM_REDISTRIBUTIONS",
-)
-load(
-    "@rules_ml_toolchain//gpu/nvshmem:nvshmem_redist_init_repository.bzl",
-    "nvshmem_redist_init_repository",
-)
+# PPC64LE: load(
+# PPC64LE:     "@nvshmem_redist_json//:distributions.bzl",
+# PPC64LE:     "NVSHMEM_REDISTRIBUTIONS",
+# PPC64LE: )
+# PPC64LE: load(
+# PPC64LE:     "@rules_ml_toolchain//gpu/nvshmem:nvshmem_redist_init_repository.bzl",
+# PPC64LE:     "nvshmem_redist_init_repository",
+# PPC64LE: )
 
-nvshmem_redist_init_repository(
-    nvshmem_redistributions = NVSHMEM_REDISTRIBUTIONS,
+# PPC64LE: nvshmem_redist_init_repository(
+# PPC64LE:     nvshmem_redistributions = NVSHMEM_REDISTRIBUTIONS,
+# PPC64LE: )
+
+# PPC64LE: inject tf_wheel_version_suffix (python_wheel_version_suffix_repository commented out)
+local_repository(
+    name = "tf_wheel_version_suffix",
+    path = "/root/tf_wheel_version_suffix_stub",
 )

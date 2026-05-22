@@ -42,15 +42,15 @@ limitations under the License.
 #include "absl/strings/string_view.h"
 #include "absl/synchronization/mutex.h"
 #include "absl/types/span.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_activity.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_callbacks.h"
+#include "cupti.h"
+#include "cupti_activity.h"
+#include "cupti_callbacks.h"
 // Note: can not include cupti_driver_cbid.h because it is not once guarded in
 // cuda 11. Remove comment here once cuda 11 is no longer supported.
-// #include "third_party/gpus/cuda/extras/CUPTI/include/cupti_driver_cbid.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_result.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_target.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+// #include "cupti_driver_cbid.h"
+#include "cupti_result.h"
+#include "cupti_target.h"
+#include "cuda.h"
 #include "xla/backends/profiler/gpu/cuda_version_variants.h"
 #include "xla/backends/profiler/gpu/cupti_buffer_events.h"
 #include "xla/backends/profiler/gpu/cupti_collector.h"
@@ -828,7 +828,8 @@ void SetCallbackEventUponApiExit(
   static absl::NoDestructor<
       std::vector<cuda_versions::CbidCategoryMap const*>> const
       kExtraCbidCategories(
-          {&cuda_versions::GetExtraCallbackIdCategories12080(),
+          
+      std::vector<cuda_versions::CbidCategoryMap const*>{&cuda_versions::GetExtraCallbackIdCategories12080(),
            &cuda_versions::GetExtraCallbackIdCategories12000()});
 
   // Find the category of the CBID, checking newer CUDA version earlier than

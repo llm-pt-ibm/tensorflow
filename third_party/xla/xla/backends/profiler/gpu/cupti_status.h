@@ -17,7 +17,7 @@ limitations under the License.
 #define XLA_BACKENDS_PROFILER_GPU_CUPTI_STATUS_H_
 
 #include "absl/status/status.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_result.h"
+#include "cupti_result.h"
 
 namespace xla {
 namespace profiler {

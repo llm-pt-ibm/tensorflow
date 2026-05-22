@@ -237,7 +237,7 @@ ThunkEmitter::ConsumeKernels() {
   for (KernelDefinition<LlvmKernelSource>& kernel : fusion_kernels) {
     std::string name(kernel.spec().name());
     auto source = std::move(kernel).TakeSource();
-    kernels_.push_back({name, std::move(source).thread_safe_module()});
+    kernels_.push_back(EmittedKernel{name, std::move(source).thread_safe_module()});
   }
 
   return std::move(kernels_);
@@ -687,8 +687,7 @@ absl::StatusOr<ThunkSequence> ThunkEmitter::EmitCallThunk(
     auto kernel_spec = kernel_definition.spec();
     auto kernel_source = std::move(kernel_definition).TakeSource();
 
-    kernels_.push_back(
-        {kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
+    kernels_.push_back(EmittedKernel{kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
 
     return MakeKernelThunkSequence(instruction, std::move(kernel_spec),
                                    /*min_alignment=*/MinAlign());
@@ -714,8 +713,7 @@ absl::StatusOr<ThunkSequence> ThunkEmitter::EmitConcatenateKernelThunk(
   TF_ASSIGN_OR_RETURN(auto backend_config,
                       instruction->backend_config<BackendConfig>());
 
-  kernels_.push_back(
-      {kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
+  kernels_.push_back(EmittedKernel{kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
 
   if (backend_config.has_llvm_kernel_options()) {
     SetXlaCpuBackendOptions(*kernels_.back().module.getModuleUnlocked(),
@@ -825,8 +823,7 @@ absl::StatusOr<ThunkSequence> ThunkEmitter::EmitElementalKernelThunk(
   auto kernel_spec = kernel_definition.spec();
   auto kernel_source = std::move(kernel_definition).TakeSource();
 
-  kernels_.push_back(
-      {kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
+  kernels_.push_back(EmittedKernel{kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
 
   return MakeKernelThunkSequence(instruction, std::move(kernel_spec),
                                  /*min_alignment=*/MinAlign());
@@ -860,7 +857,7 @@ absl::StatusOr<ThunkSequence> ThunkEmitter::EmitFusionKernelThunk(
     TF_ASSIGN_OR_RETURN(LlvmKernelSource llvm_kernel_source,
                         fusion_compiler_.Compile(std::move(kernel_source)));
 
-    kernels_.push_back({kernel_spec.name(),
+    kernels_.push_back(EmittedKernel{kernel_spec.name(),
                         std::move(llvm_kernel_source).thread_safe_module()});
 
     return MakeKernelThunkSequence(instruction, std::move(kernel_spec),
@@ -1069,8 +1066,7 @@ absl::StatusOr<ThunkSequence> ThunkEmitter::EmitDotThunk(
       auto kernel_spec = kernel_definition.spec();
       auto kernel_source = std::move(kernel_definition).TakeSource();
 
-      kernels_.push_back(
-          {kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
+      kernels_.push_back(EmittedKernel{kernel_spec.name(), std::move(kernel_source).thread_safe_module()});
 
       return MakeKernelThunkSequence(instruction, std::move(kernel_spec),
                                      /*min_alignment=*/MinAlign());

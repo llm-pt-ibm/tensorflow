@@ -347,10 +347,7 @@ def _gen_kernel_library(
                 template = template,
             )
 
-            host_triple = select({
-                "@platforms//cpu:aarch64": "aarch64-unknown-linux-gnu",  # copybara:comment_replace "//third_party/bazel_platforms/cpu:aarch64": "aarch64-unknown-linux-gnu",
-                "//conditions:default": "x86_64-unknown-linux-gnu",
-            })
+            host_triple = "powerpc64le-unknown-linux-gnu"
 
             _gen_kernel_bin_rule(
                 name = "{op}_{name}_{platform}_{type}_{output_type}_kernel_generator".format(

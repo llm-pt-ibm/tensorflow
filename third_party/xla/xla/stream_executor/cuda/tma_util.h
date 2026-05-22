@@ -17,7 +17,7 @@ limitations under the License.
 #define XLA_STREAM_EXECUTOR_CUDA_TMA_UTIL_H_
 
 #include "absl/status/statusor.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 #include "xla/stream_executor/gpu/tma_metadata.h"
 
 namespace stream_executor::gpu {

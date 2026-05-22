@@ -104,8 +104,8 @@ class ExecutionGraph {
     Operation(const Operation&) = default;
     Operation& operator=(const Operation&) = default;
 
-    Operation(Operation&&) = default;
-    Operation& operator=(Operation&&) = default;
+    Operation(Operation&&) noexcept = default;
+    Operation& operator=(Operation&&) noexcept = default;
 
    private:
     std::vector<std::pair<std::string, std::vector<std::unique_ptr<Operation>>>>

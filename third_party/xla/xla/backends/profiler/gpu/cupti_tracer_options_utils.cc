@@ -29,7 +29,7 @@ limitations under the License.
 #include "absl/strings/str_join.h"
 #include "absl/strings/str_split.h"
 #include "absl/strings/string_view.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_activity.h"
+#include "cupti_activity.h"
 #include "xla/backends/profiler/gpu/cupti_collector.h"
 #include "xla/backends/profiler/gpu/cupti_tracer.h"
 #include "xla/tsl/platform/errors.h"

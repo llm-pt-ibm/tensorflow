@@ -31,7 +31,7 @@ limitations under the License.
 #endif
 
 #if !defined(PLATFORM_GOOGLE)
-#include "third_party/gpus/cuda/cuda_config.h"
+#include "cuda_config.h"
 #include "xla/tsl/platform/env.h"
 #endif
 #include "xla/tsl/platform/logging.h"

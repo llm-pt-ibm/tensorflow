@@ -12,8 +12,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "third_party/gpus/cuda/include/cufft.h"
-#include "third_party/gpus/cuda/include/cufftXt.h"
+#include "cufft.h"
+#include "cufftXt.h"
 #include "xla/tsl/platform/logging.h"
 #include "tsl/platform/dso_loader.h"
 #include "tsl/platform/load_library.h"

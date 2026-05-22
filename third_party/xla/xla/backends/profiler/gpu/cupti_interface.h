@@ -19,10 +19,10 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_profiler_target.h"
-#include "third_party/gpus/cuda/extras/CUPTI/include/cupti_target.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cupti.h"
+#include "cupti_profiler_target.h"
+#include "cupti_target.h"
+#include "cuda.h"
 
 // These types are only available starting from CUPTI 2024.3, therefore we
 // forward declare them here, so that we can still compile this header against

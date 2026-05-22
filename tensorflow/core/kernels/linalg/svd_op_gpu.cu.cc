@@ -55,7 +55,7 @@ static const char kErrMsg[] =
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_8022d87c {
 // This kernel computes the reduction
 // V' = sum_i (M_i * U_i,1 * S_i).
 // The result is stored in V[batch] and has the same sign as the
@@ -83,8 +83,7 @@ __global__ void ExtractSignOfVKernel(GpuLaunchConfig config,
     V[i] = V[i] >= 0 ? Scalar(1) : Scalar(-1);
   }
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_8022d87c
 // Scalar: The input scalar type (can be complex)
 template <class Scalar>
 class SvdOpGpu : public AsyncOpKernel {

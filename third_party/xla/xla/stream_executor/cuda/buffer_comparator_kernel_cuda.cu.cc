@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "third_party/gpus/cuda/include/device_launch_parameters.h"
+#include "device_launch_parameters.h"
 #include "xla/primitive_util.h"
 #include "xla/stream_executor/cuda/cuda_platform_id.h"
 #include "xla/stream_executor/gpu/buffer_comparator_kernel_lib.cu.h"
@@ -26,7 +26,7 @@ namespace stream_executor::cuda {
 // relative error does not exceed the passed rel_error_threshold. Write the
 // number of mismatches into out parameter mismatch_count.
 
-namespace {
+inline namespace ppc64le_anon_69540437 {
 
 static void RegisterBufferComparatorKernelCudaImpl() {
   auto register_kernel = [&](auto primitive_type_constant) {
@@ -38,7 +38,7 @@ static void RegisterBufferComparatorKernelCudaImpl() {
   xla::primitive_util::FloatingPointTypeForEach(register_kernel);
 }
 
-}  // namespace
+}  // namespace ppc64le_anon_69540437
 }  // namespace stream_executor::cuda
 
 STREAM_EXECUTOR_REGISTER_MODULE_INITIALIZER(

@@ -41,7 +41,7 @@ PluginKind GetPluginKind() {
   } else if constexpr (std::is_same_v<FactoryT, PluginRegistry::FftFactory>) {
     return PluginKind::kFft;
   } else {
-    static_assert(false, "Unsupported factory type");
+    return PluginKind::kBlas;
   }
 }
 template <typename FactoryT>
@@ -53,7 +53,7 @@ absl::string_view GetPluginName() {
   } else if constexpr (std::is_same_v<FactoryT, PluginRegistry::FftFactory>) {
     return "FFT";
   } else {
-    static_assert(false, "Unsupported factory type");
+    return "blas";
   }
 }
 

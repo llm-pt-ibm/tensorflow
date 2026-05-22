@@ -25,7 +25,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_90bdf4c1 {
 typedef Eigen::GpuDevice GPUDevice;
 
 // Each attempt to generate a new draw from the Gamma distribution is 95+%
@@ -148,8 +148,7 @@ __global__ void __launch_bounds__(1024)
   }      // for: output_idx
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_90bdf4c1
 namespace functor {
 
 template <typename T>

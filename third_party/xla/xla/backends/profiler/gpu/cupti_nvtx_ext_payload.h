@@ -19,7 +19,7 @@ limitations under the License.
 #include <cstdint>
 #include <string>
 
-#include "third_party/gpus/cuda/include/nvtx3/nvToolsExtPayload.h"
+#include "nvtx3/nvToolsExtPayload.h"
 
 namespace xla {
 namespace profiler {

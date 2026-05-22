@@ -29,7 +29,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_86b02da3 {
 
 typedef Eigen::GpuDevice GPUDevice;
 
@@ -150,8 +150,7 @@ __global__ void ReduceInfNanThreeSlotsKernel(const Tin* __restrict__ data,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_86b02da3
 template <typename Tin, typename Tout>
 struct CurtHealthLaunch {
   void Run(const GPUDevice& d, const Tin* data, int size, Tout output[1]) {

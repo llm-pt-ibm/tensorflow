@@ -29,7 +29,7 @@ limitations under the License.
 namespace tensorflow {
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_b9d7d731 {
 template <typename T, typename OutType>
 __global__ void UpperBoundKernel(const T* __restrict__ sorted_inputs,
                                  int batch_size, int sorted_inputs_size,
@@ -55,8 +55,7 @@ __global__ void LowerBoundKernel(const T* __restrict__ sorted_inputs,
         sorted_inputs + bid * sorted_inputs_size, sorted_inputs_size, value);
   }
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_b9d7d731
 namespace functor {
 template <typename T, typename OutType>
 struct UpperBoundFunctor<GPUDevice, T, OutType> {

@@ -119,6 +119,8 @@ cc_library(
     name = "assign_op",
     hdrs = ["assign_op.h"],
     deps = [
+        "//third_party/gpus/cudnn:cudnn_headers",
+        "//third_party/gpus/cuda:cuda_headers",
         "//tensorflow/core:framework",
         "@eigen_archive//:eigen3",
     ],
@@ -4166,6 +4168,7 @@ tf_kernel_library(
         "conv_ops_impl.h",
     ],
     deps = [
+        "@xla//xla/stream_executor/gpu:gpu_asm_opts",
         ":cast_op",
         ":conv_2d",
         ":conv_3d",

@@ -66,8 +66,8 @@ limitations under the License.
 #include "tsl/profiler/lib/traceme.h"
 
 #if GOOGLE_CUDA
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
 #elif TENSORFLOW_USE_ROCM
 #include "rocm/rocm_config.h"
 #endif

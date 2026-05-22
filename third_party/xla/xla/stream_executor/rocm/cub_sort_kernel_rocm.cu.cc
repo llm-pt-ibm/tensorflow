@@ -86,7 +86,7 @@ struct define<tsl::bfloat16> {
 
 namespace stream_executor {
 namespace rocm {
-namespace {
+inline namespace ppc64le_anon_288e5ba2 {
 
 template <typename KeyT>
 absl::Status CubSortKeys(void* d_temp_storage, size_t& temp_bytes,
@@ -232,8 +232,7 @@ static absl::Status CubSortPairsGetScratchSize(size_t* temp_bytes,
                                   batch_size, nullptr);
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_288e5ba2
 #define XLA_CUB_DEFINE_SORT_KEYS(suffix, type)                                \
   XLA_FFI_DEFINE_HANDLER(kCubSortKeysExecute_##suffix,                        \
                          CubSortKeysExecute<type>,                            \

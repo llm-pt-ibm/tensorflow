@@ -36,7 +36,7 @@ typedef Eigen::GpuDevice GPUDevice;
 
 namespace functor {
 
-namespace {
+inline namespace ppc64le_anon_988986e6 {
 
 template <typename Index>
 inline __device__ Index GetSliceIndex(const Index index, const Index split_size,
@@ -200,8 +200,7 @@ Status LaunchSparseSplitScatterKernel(
                          output_indices_data, output_values_data);
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_988986e6
 template <typename T>
 struct SparseSplitFunctor<GPUDevice, T> {
   void operator()(OpKernelContext* context, const Tensor& input_indices,

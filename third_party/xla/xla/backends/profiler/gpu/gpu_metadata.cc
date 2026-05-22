@@ -17,9 +17,9 @@ limitations under the License.
 
 #include "absl/log/log.h"
 #include "absl/strings/str_cat.h"
-#include "third_party/gpus/cuda/include/cuda.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
-#include "third_party/gpus/cuda/include/driver_types.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
+#include "driver_types.h"
 #include "xla/tsl/profiler/utils/xplane_builder.h"
 #include "xla/tsl/profiler/utils/xplane_schema.h"
 #include "xla/tsl/profiler/utils/xplane_utils.h"

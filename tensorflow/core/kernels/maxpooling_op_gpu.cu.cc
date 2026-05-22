@@ -30,7 +30,7 @@ limitations under the License.
 #include "tensorflow/core/util/gpu_kernel_helper.h"
 
 namespace tensorflow {
-namespace {
+inline namespace ppc64le_anon_864ba287 {
 template <bool propagate_nans, typename dtype>
 EIGEN_DEVICE_FUNC EIGEN_ALWAYS_INLINE bool IsGreaterThan(dtype a, dtype b) {
   if (propagate_nans) {
@@ -349,8 +349,7 @@ __global__ void MaxPoolGradBackward(
   }
 }
 #undef GPU_1D_KERNEL_LOOP
-}  // namespace
-
+}  // namespace ppc64le_anon_864ba287
 namespace functor {
 
 #if GOOGLE_CUDA

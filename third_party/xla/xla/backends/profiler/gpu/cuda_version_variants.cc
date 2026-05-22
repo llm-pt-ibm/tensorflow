@@ -19,8 +19,8 @@ limitations under the License.
 
 #include "absl/base/no_destructor.h"
 #include "absl/log/log.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
-#include "third_party/gpus/cuda/include/driver_types.h"
+#include "cuda_runtime_api.h"
+#include "driver_types.h"
 
 namespace xla {
 namespace profiler {

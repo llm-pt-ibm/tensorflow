@@ -24,7 +24,7 @@ limitations under the License.
 #include "absl/status/status.h"
 #include "absl/strings/str_format.h"
 #include "absl/time/time.h"
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda_runtime_api.h"
 #include "xla/core/collectives/communicator.h"
 #include "xla/debug_options_flags.h"
 #include "xla/pjrt/distributed/client.h"

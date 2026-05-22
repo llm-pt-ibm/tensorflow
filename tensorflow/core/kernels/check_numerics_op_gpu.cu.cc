@@ -29,7 +29,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-namespace {
+inline namespace ppc64le_anon_f8afe9e3 {
 
 typedef Eigen::GpuDevice GPUDevice;
 
@@ -77,8 +77,7 @@ __global__ void CheckNumericsKernelV2(const T* __restrict__ data, int size,
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_f8afe9e3
 // A simple launch pad to launch the Cuda kernels that checks the numerical
 // abnormality in the given array
 template <typename T>

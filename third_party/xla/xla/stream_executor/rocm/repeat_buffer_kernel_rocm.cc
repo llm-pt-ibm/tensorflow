@@ -1,3 +1,5 @@
+// ppc64le GCC patch: this .cc includes .cu.h with __global__ - requires NVCC
+#ifdef __CUDACC__
 /* Copyright 2025 The OpenXLA Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,3 +31,5 @@ GPU_KERNEL_REGISTRY_REGISTER_KERNEL_STATICALLY(
 
           "repeat_buffer_kernel", arity);
     }));
+
+#endif  // __CUDACC__

@@ -60,7 +60,7 @@ limitations under the License.
 #include "xla/service/gpu_topology.h"
 
 #if GOOGLE_CUDA
-#include "third_party/gpus/cuda/include/cuda_runtime_api.h"
+#include "cuda_runtime_api.h"
 #endif  // GOOGLE_CUDA
 
 namespace pjrt {

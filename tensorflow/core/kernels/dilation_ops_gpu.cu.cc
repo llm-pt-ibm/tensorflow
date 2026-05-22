@@ -32,7 +32,7 @@ namespace tensorflow {
 
 typedef Eigen::GpuDevice GPUDevice;
 
-namespace {
+inline namespace ppc64le_anon_e9540a85 {
 
 template <typename T>
 __global__ void DilationKernel(
@@ -172,8 +172,7 @@ __global__ void DilationBackpropFilterKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_e9540a85
 namespace functor {
 
 template <typename T>

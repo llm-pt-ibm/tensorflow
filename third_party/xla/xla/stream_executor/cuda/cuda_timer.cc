@@ -22,7 +22,7 @@ limitations under the License.
 #include "absl/status/status.h"
 #include "absl/status/statusor.h"
 #include "absl/time/time.h"
-#include "third_party/gpus/cuda/include/cuda.h"
+#include "cuda.h"
 #include "xla/stream_executor/activate_context.h"
 #include "xla/stream_executor/cuda/cuda_event.h"
 #include "xla/stream_executor/cuda/cuda_status.h"
@@ -120,3 +120,14 @@ absl::StatusOr<CudaTimer> CudaTimer::Create(StreamExecutor *executor,
 }
 
 }  // namespace stream_executor::gpu
+
+
+// ppc64le patch: dummy for missing .cu.cc symbol
+namespace stream_executor {
+namespace gpu {
+  absl::StatusOr<GpuSemaphore> LaunchDelayKernel(Stream* stream) {
+    return absl::InternalError("Dummy implementation for LaunchDelayKernel (CUDA kernels disabled during GCC compilation)");
+  }
+}
+}
+

@@ -21,7 +21,7 @@ limitations under the License.
 #include "xla/stream_executor/typed_kernel_factory.h"
 
 namespace stream_executor::gpu {
-namespace {
+inline namespace ppc64le_anon_2b651c65 {
 // Wait for the value pointed to by `semaphore` to have value `target`, timing
 // out after approximately `APPROX_TIMEOUT_SECONDS` seconds if that value is
 // not reached. This can happen if, for example, blocking launches are enabled
@@ -47,8 +47,7 @@ __global__ void DelayKernel(volatile GpuSemaphoreState* semaphore,
     *semaphore = GpuSemaphoreState::kTimedOut;
   }
 }
-}  // namespace
-
+}  // namespace ppc64le_anon_2b651c65
 absl::StatusOr<GpuSemaphore> LaunchDelayKernel(Stream* stream) {
   StreamExecutor* executor = stream->parent();
 

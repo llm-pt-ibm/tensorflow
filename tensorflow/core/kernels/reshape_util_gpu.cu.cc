@@ -24,7 +24,7 @@ namespace tensorflow {
 
 using GPUDevice = Eigen::GpuDevice;
 
-namespace {
+inline namespace ppc64le_anon_b9570910 {
 
 template <typename Tindex>
 __global__ void ReshapeSparseTensorKernel(
@@ -50,8 +50,7 @@ __global__ void ReshapeSparseTensorKernel(
   }
 }
 
-}  // namespace
-
+}  // namespace ppc64le_anon_b9570910
 namespace functor {
 
 template <>

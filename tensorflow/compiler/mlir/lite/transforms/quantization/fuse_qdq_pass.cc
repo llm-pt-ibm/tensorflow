@@ -109,7 +109,7 @@ OpQuantizationType GetOpQuantizationType(mlir::Operation* op) {
   // pattern's root is that.
 
   static const absl::NoDestructor<absl::flat_hash_set<std::string>>
-      kDrqOpsWithNoDrqInput({"tfl.embedding_lookup"});
+      kDrqOpsWithNoDrqInput(absl::flat_hash_set<std::string>{"tfl.embedding_lookup"});
 
   // "return" is not going to be quantized
   if (op->hasTrait<OpTrait::IsTerminator>()) {

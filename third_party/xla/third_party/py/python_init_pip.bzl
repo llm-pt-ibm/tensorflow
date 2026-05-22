@@ -36,9 +36,7 @@ cc_library(
     pip_parse(
         name = "pypi",
         annotations = numpy_annotations,
-        python_interpreter_target = "@{}_host//:python".format(
-            get_toolchain_name_per_python_version("python"),
-        ),
+        python_interpreter = "/root/python3_bazel.sh",  # ppc64le: wrapper that unsets PYTHONHOME
         extra_hub_aliases = {
             "numpy": ["numpy_headers"],
         },
